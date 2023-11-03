@@ -4,6 +4,7 @@ class_name Player
 
 @export var is_player_1 = true
 @export var speed : float = 128
+@export var potion_in_hand : Potion
 
 var left_pressed = 0
 var right_pressed = 0
