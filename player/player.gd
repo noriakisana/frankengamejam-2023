@@ -61,7 +61,6 @@ func _unhandled_input(event):
 			if event.is_action_pressed("walk_left_p2"):
 				left_pressed = 1
 				get_node("Visual").set_flip_h(true)
-				print("test")
 				animationPlayer.play("player_walk")
 			if event.is_action_pressed("walk_down_p2"):
 				down_pressed = 1
@@ -100,8 +99,10 @@ func _physics_process(delta):
 	#move_and_collide(motion)
 	
 	# interacting
-	if Input.is_action_just_pressed("interact_p1"):
-		interacted.emit(is_player_1, potion_in_hand)
+	if is_player_1 and Input.is_action_just_pressed("interact_p1"):
+		interacted.emit(true, potion_in_hand)
+	if !is_player_1 and Input.is_action_just_pressed("interact_p2"):
+		interacted.emit(false, potion_in_hand)
 
 func receive_potion(potion : Potion):
 	if potion_in_hand:
