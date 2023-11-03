@@ -1,7 +1,7 @@
 extends Sprite2D
 
 @export var interaction_distance : float = 64
-@export var placed_potion : Potion
+@export var placed_useable : Useable
 
 @onready var player_1 : Player = get_tree().get_first_node_in_group("player")
 @onready var player_2 : Player = get_tree().get_nodes_in_group("player")[1]
@@ -9,13 +9,13 @@ extends Sprite2D
 var distance_to_player_1 : float
 var distance_to_player_2 : float
 
-var potion_node : Node2D
+var useable_node : Node2D
 
 func _ready():
-	self.placed_potion = load("res://traenke/trank_green/green_potion.tres")
-	potion_node = placed_potion.get_scene().instantiate()
-	potion_node.scale = Vector2(0.7, 0.7)
-	add_child(potion_node)
+	self.placed_useable = load("res://ingredients/snake.tres")
+	useable_node = placed_useable.get_scene()
+	useable_node.scale = Vector2(0.7, 0.7)
+	add_child(useable_node)
 	
 	$InteractionBackground.visible = false
 	
@@ -32,7 +32,7 @@ func _process(delta):
 	else:
 		$InteractionBackground.visible = false
 
-func interact(is_player_1 : bool, potion : Potion):
+func interact(is_player_1 : bool, useable : Useable):
 	var player
 	var distance_to_player
 	if is_player_1:
@@ -42,16 +42,16 @@ func interact(is_player_1 : bool, potion : Potion):
 		player = player_2
 		distance_to_player = distance_to_player_2
 	if distance_to_player <= interaction_distance:
-		if placed_potion: # there is a placed potion
-			var success = player.receive_potion(placed_potion)
-			if success: # player can pickup potion
-				potion_node.queue_free()
-				placed_potion = null
+		if placed_useable: # there is a placed usable
+			var success = player.receive_useable(placed_useable)
+			if success: # player can pickup useable
+				useable_node.queue_free()
+				placed_useable = null
 		else:
-			var player_potion = player.lose_potion()
-			if !player_potion:
+			var player_useable = player.lose_useable()
+			if !player_useable:
 				return
-			placed_potion = player_potion
-			potion_node = placed_potion.get_scene().instantiate()
-			potion_node.scale = Vector2(0.7, 0.7)
-			add_child(potion_node)
+			placed_useable = player_useable
+			useable_node = placed_useable.get_scene()
+			useable_node.scale = Vector2(0.7, 0.7)
+			add_child(useable_node)

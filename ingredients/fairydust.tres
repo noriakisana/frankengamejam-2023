@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=4 format=3 uid="uid://cfrttvl6kf7us"]
+
+[ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_qrsb4"]
+[ext_resource type="Texture2D" uid="uid://dsoifjl11j5qh" path="res://ingredients/Ingredients.png" id="2_k0edr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta8ja"]
+atlas = ExtResource("2_k0edr")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_qrsb4")
+type = 0
+texture = SubResource("AtlasTexture_ta8ja")
