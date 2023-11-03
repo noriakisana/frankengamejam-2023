@@ -2,11 +2,12 @@ extends CharacterBody2D
 
 class_name Player
 
-signal interacted(is_p1)
+signal interacted(is_p1, potion)
 
 @export var is_player_1 = true
 @export var speed : float = 128
 @export var potion_in_hand : Potion
+var potion_node : Node2D
 
 var left_pressed = 0
 var right_pressed = 0
@@ -14,6 +15,10 @@ var up_pressed = 0
 var down_pressed = 0
 
 var dir : Vector2
+
+func _ready():
+	pass
+	#receive_potion(load("res://traenke/trank_leer/empty_potion.tres"))
 
 func _unhandled_input(event):
 	if is_player_1:
@@ -73,7 +78,26 @@ func _physics_process(delta):
 	
 	# interacting
 	if Input.is_action_just_pressed("interact_p1"):
-		interacted.emit(is_player_1)
+		interacted.emit(is_player_1, potion_in_hand)
+
+func receive_potion(potion : Potion):
+	if potion_in_hand:
+		return false
+	
+	potion_in_hand = potion
+	potion_node = potion.get_scene().instantiate()
+	potion_node.scale = Vector2(0.7, 0.7)
+	add_child(potion_node)
+	return true
+
+func lose_potion():
+	if !potion_in_hand:
+		return null
+	
+	var output = potion_in_hand.duplicate()
+	potion_in_hand = null
+	potion_node.queue_free()
+	return output
 
 """
 func change_animation_state():
