@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Player
 
+signal interacted(is_p1)
+
 @export var is_player_1 = true
 @export var speed : float = 128
 @export var potion_in_hand : Potion
@@ -54,7 +56,6 @@ func _unhandled_input(event):
 				up_pressed = 0
 
 func _physics_process(delta):
-		
 	dir = Vector2(
 		right_pressed - left_pressed,
 		down_pressed - up_pressed
@@ -69,6 +70,10 @@ func _physics_process(delta):
 	move_and_slide()
 	#var motion = velocity * delta
 	#move_and_collide(motion)
+	
+	# interacting
+	if Input.is_action_just_pressed("interact_p1"):
+		interacted.emit(is_player_1)
 
 """
 func change_animation_state():
