@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgya02grm3hdm"]
+
+[ext_resource type="Texture2D" uid="uid://bbbkj5wvgt1j1" path="res://traenke/trank_leer/trank_empty.png" id="1_7isuf"]
+
+[node name="trank_leer" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7isuf")
