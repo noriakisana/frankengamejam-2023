@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw2sukhi82fgp"]
+[gd_scene load_steps=7 format=3 uid="uid://cw2sukhi82fgp"]
 
 [ext_resource type="Texture2D" uid="uid://c3w5pqc8vjsjt" path="res://map/tileset.png" id="1_l7bjk"]
 [ext_resource type="PackedScene" uid="uid://c2jyk87ha2655" path="res://player/player.tscn" id="2_01d6f"]
@@ -25,47 +25,6 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0v1r0")
 
-[sub_resource type="Animation" id="Animation_phwvv"]
-resource_name = "player_1_walk"
-length = 0.20001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b0gd5"]
-_data = {
-"player_1_walk": SubResource("Animation_phwvv")
-}
-
-[sub_resource type="Animation" id="Animation_yebbs"]
-resource_name = "player_2_walk"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_etrnh"]
-_data = {
-"player_2_walk": SubResource("Animation_yebbs")
-}
-
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -91,22 +50,12 @@ layer_2/tile_data = PackedInt32Array()
 [node name="Player1" parent="." instance=ExtResource("2_01d6f")]
 position = Vector2(-210, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player1"]
-libraries = {
-"": SubResource("AnimationLibrary_b0gd5")
-}
-
 [node name="Player2" parent="." instance=ExtResource("2_01d6f")]
 position = Vector2(210, 0)
 is_player_1 = false
 
 [node name="Visual" parent="Player2" index="0"]
 texture = ExtResource("3_p8bcv")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player2"]
-libraries = {
-"": SubResource("AnimationLibrary_etrnh")
-}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)
