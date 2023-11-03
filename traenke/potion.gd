@@ -8,7 +8,6 @@ enum Type {
 }
 
 @export var type : Type
-var scene : PackedScene
 
 func _init(type=Type.EMPTY):
 	self.type = type
