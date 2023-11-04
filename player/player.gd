@@ -18,7 +18,7 @@ var dir : Vector2
 
 func _ready():
 	if is_player_1:
-		receive_useable(load("res://ingredients/fairydust.tres"))
+		receive_useable(load("res://ingredients/frog.tres"))
 	else:
 		receive_useable(load("res://ingredients/heart.tres"))
 
