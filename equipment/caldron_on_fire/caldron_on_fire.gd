@@ -25,7 +25,7 @@ func process_potion():
 	$ProgressBar.visible = true
 	$ProcessTimer.wait_time = processing_time
 	$ProcessTimer.start()
-	$AnimationPlayer.play("caldron_on_fire_animationw")
+	$AnimationPlayer.play("caldron_on_fire_animation")
 
 func start_processing():
 	var fullfilled = true
@@ -37,8 +37,9 @@ func start_processing():
 		
 func _on_process_timer_timeout():
 	$ProgressBar.visible = false
-	if placed_useable.type == Ingredient.Type.FROG:
+	if true: #placed_useable.type == Ingredient.Type.FROG:
 		placed_useable = load("res://traenke/trank_green/green_potion.tres")
+
 		useable_node.queue_free()
 		useable_node = placed_useable.get_scene()
 		useable_node.scale = Vector2(0.7, 0.7)

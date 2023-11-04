@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbg04egj6hkiu"]
 
 [ext_resource type="Script" path="res://equipment/fireplace/fireplace.gd" id="1_h641d"]
-[ext_resource type="Texture2D" uid="uid://bxcwxj5c2ne54" path="res://equipment/fireplace/fierplace.png" id="1_xpx0t"]
+[ext_resource type="Texture2D" uid="uid://b6pvpomaqbila" path="res://equipment/fireplace/fierplace.png" id="1_xpx0t"]
 
 [sub_resource type="Animation" id="Animation_3663l"]
 resource_name = "fireplace_animation"
@@ -51,3 +51,5 @@ color = Color(0, 0.780392, 0.780392, 1)
 
 [node name="ProcessTimer" type="Timer" parent="."]
 one_shot = true
+
+[connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]
