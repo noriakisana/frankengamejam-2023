@@ -5,7 +5,7 @@ class_name Player_2
 @onready var player_1 : Player = get_tree().get_first_node_in_group("player")
 
 func _ready():
-	receive_useable(load("res://ingredients/unicorn.tres"))
+	receive_useable(load("res://ingredients/unicorn/unicorn.tres"))
 	#player_1.interacted.connect(hand_over_useable)
 
 func _unhandled_input(event):

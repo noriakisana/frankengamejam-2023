@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=2 format=3 uid="uid://b0qh8l2umas58"]
+
+[ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_esdwv"]
+
+[resource]
+script = ExtResource("1_esdwv")
+type = 2
