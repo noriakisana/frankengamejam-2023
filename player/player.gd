@@ -7,7 +7,11 @@ signal interacted(is_p1, potion)
 @export var is_player_1 = true
 @export var speed : float = 128
 @export var useable_in_hand : Useable
+@export var interaction_distance : float = 92
 var useable_node : Node2D
+
+@onready var player_1 : Player = get_tree().get_first_node_in_group("player")
+@onready var player_2 : Player = get_tree().get_nodes_in_group("player")[1]
 
 var left_pressed = 0
 var right_pressed = 0
@@ -21,6 +25,9 @@ func _ready():
 		receive_useable(load("res://ingredients/fairydust.tres"))
 	else:
 		receive_useable(load("res://ingredients/heart.tres"))
+		
+	player_1.interacted.connect(hand_over_useable)
+	player_2.interacted.connect(hand_over_useable)
 
 func _unhandled_input(event):
 	var animationPlayer = $Visual/AnimationPlayer
@@ -125,6 +132,16 @@ func lose_useable():
 	useable_node.queue_free()
 	return output
 
+func hand_over_useable(is_player_1 : bool, useable : Useable):
+	var vec_position_players : Vector2 = player_1.position - player_2.position
+	var distance_players = vec_position_players.length()
+	if distance_players <= interaction_distance:
+		if is_player_1:
+			player_2.receive_useable(player_1.lose_useable())
+		else:
+			player_1.receive_useable(player_2.lose_useable())
+	
+	
 """
 func change_animation_state():
 	if velocity != Vector2.ZERO:
