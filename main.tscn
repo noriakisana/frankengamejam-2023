@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw2sukhi82fgp"]
+[gd_scene load_steps=13 format=3 uid="uid://cw2sukhi82fgp"]
 
 [ext_resource type="Texture2D" uid="uid://c3w5pqc8vjsjt" path="res://map/tileset.png" id="1_l7bjk"]
 [ext_resource type="Script" path="res://main.gd" id="1_m04ax"]
 [ext_resource type="PackedScene" uid="uid://c2jyk87ha2655" path="res://player/player.tscn" id="2_01d6f"]
 [ext_resource type="Texture2D" uid="uid://lwde37vquu4r" path="res://player/player_2.png" id="3_p8bcv"]
+[ext_resource type="Script" path="res://player/player_1.gd" id="4_tpwwe"]
 [ext_resource type="PackedScene" uid="uid://mcki5xiihsdi" path="res://equipment/slot/slot.tscn" id="4_xc6mp"]
+[ext_resource type="Script" path="res://player/player_2.gd" id="5_se5tk"]
 [ext_resource type="PackedScene" uid="uid://bthh8bokg06qu" path="res://equipment/chop_board/chop_board.tscn" id="5_xcb3k"]
 [ext_resource type="PackedScene" uid="uid://b0qqscc3yl72j" path="res://equipment/bin/bin.tscn" id="7_ui7ao"]
 [ext_resource type="PackedScene" uid="uid://dbg04egj6hkiu" path="res://equipment/fireplace/fireplace.tscn" id="8_8rbuo"]
@@ -59,10 +61,11 @@ layer_2/tile_data = PackedInt32Array(-458752, 196608, 0, -458751, 196608, 0, -45
 
 [node name="Player1" parent="." instance=ExtResource("2_01d6f")]
 position = Vector2(-210, 0)
+script = ExtResource("4_tpwwe")
 
 [node name="Player2" parent="." instance=ExtResource("2_01d6f")]
 position = Vector2(210, 0)
-is_player_1 = false
+script = ExtResource("5_se5tk")
 
 [node name="Visual" parent="Player2" index="0"]
 texture = ExtResource("3_p8bcv")

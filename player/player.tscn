@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2jyk87ha2655"]
+[gd_scene load_steps=5 format=3 uid="uid://c2jyk87ha2655"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_klph8"]
 [ext_resource type="Texture2D" uid="uid://584fhujvpqyc" path="res://player/player_1.png" id="2_8q6gh"]
 
 [sub_resource type="Animation" id="Animation_v1spg"]
@@ -29,7 +28,6 @@ _data = {
 size = Vector2(22, 10)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-script = ExtResource("1_klph8")
 
 [node name="Visual" type="Sprite2D" parent="."]
 texture = ExtResource("2_8q6gh")
