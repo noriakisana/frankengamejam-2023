@@ -20,12 +20,12 @@ func start_processing():
 	$ProgressBar.visible = true
 	$ProcessTimer.wait_time = processing_time
 	$ProcessTimer.start()
-	$AnimationPlayer.play("caldron_on_fire_animationw")
+	$AnimationPlayer.play("caldron_on_fire_animation")
 
 func _on_process_timer_timeout():
 	$ProgressBar.visible = false
 	if placed_useable.type == Ingredient.Type.FROG:
-		placed_useable = load("res://ingredients/frog/frog.tres")
+		placed_useable = load("res://ingredients/fried_frog/fried_frog.tres")
 		useable_node.queue_free()
 		useable_node = placed_useable.get_scene()
 		useable_node.scale = Vector2(0.7, 0.7)

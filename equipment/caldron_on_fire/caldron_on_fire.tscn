@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwbtiapktvd17"]
 
-[ext_resource type="Texture2D" uid="uid://d15ifq6t83o20" path="res://equipment/caldron_on_fire/caldron_on_fire.png" id="1_vt0dd"]
+[ext_resource type="Texture2D" uid="uid://b4v888woome6q" path="res://equipment/caldron_on_fire/caldron_on_fire.png" id="1_vt0dd"]
 [ext_resource type="Script" path="res://equipment/caldron_on_fire/caldron_on_fire.gd" id="1_xw0hb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40mlm"]

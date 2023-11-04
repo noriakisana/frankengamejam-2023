@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bthh8bokg06qu"]
 
-[ext_resource type="Texture2D" uid="uid://s6nj10y3ia4o" path="res://equipment/chop_board/chop_board.png" id="1_i6f0h"]
+[ext_resource type="Texture2D" uid="uid://deu532g1ysq8d" path="res://equipment/chop_board/chop_board.png" id="1_i6f0h"]
 [ext_resource type="Script" path="res://equipment/chop_board/chop_board.gd" id="2_byqud"]
 
 [node name="ChopBoard" type="Sprite2D"]
