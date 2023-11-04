@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cw2sukhi82fgp"]
+[gd_scene load_steps=16 format=3 uid="uid://cw2sukhi82fgp"]
 
 [ext_resource type="Texture2D" uid="uid://c3w5pqc8vjsjt" path="res://map/tileset.png" id="1_l7bjk"]
 [ext_resource type="Script" path="res://main.gd" id="1_m04ax"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dbg04egj6hkiu" path="res://equipment/fireplace/fireplace.tscn" id="8_8rbuo"]
 [ext_resource type="PackedScene" uid="uid://djphhge7lb61q" path="res://equipment/mortar/mortar.tscn" id="11_s1vc2"]
 [ext_resource type="PackedScene" uid="uid://dwbtiapktvd17" path="res://equipment/caldron_on_fire/caldron_on_fire.tscn" id="12_y8u6k"]
+[ext_resource type="Script" path="res://score.gd" id="13_dmlrm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0v1r0"]
 texture = ExtResource("1_l7bjk")
@@ -105,6 +106,14 @@ scale = Vector2(2, 2)
 [node name="CaldronRight" parent="Equipments" instance=ExtResource("12_y8u6k")]
 position = Vector2(210, 0)
 scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -479.0
+offset_top = -282.0
+offset_right = -342.0
+offset_bottom = -256.0
+text = "test"
+script = ExtResource("13_dmlrm")
 
 [editable path="Player1"]
 [editable path="Player2"]
