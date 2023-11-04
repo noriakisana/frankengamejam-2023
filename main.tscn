@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw2sukhi82fgp"]
+[gd_scene load_steps=8 format=3 uid="uid://cw2sukhi82fgp"]
 
 [ext_resource type="Texture2D" uid="uid://c3w5pqc8vjsjt" path="res://map/tileset.png" id="1_l7bjk"]
+[ext_resource type="Script" path="res://main.gd" id="1_m04ax"]
 [ext_resource type="PackedScene" uid="uid://c2jyk87ha2655" path="res://player/player.tscn" id="2_01d6f"]
 [ext_resource type="Texture2D" uid="uid://lwde37vquu4r" path="res://player/player_2.png" id="3_p8bcv"]
 [ext_resource type="PackedScene" uid="uid://b7o6vohfvqcrr" path="res://equipment/slot.tscn" id="4_xc6mp"]
@@ -26,6 +27,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0v1r0")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_m04ax")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
