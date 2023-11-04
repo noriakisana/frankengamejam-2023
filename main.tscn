@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cw2sukhi82fgp"]
+[gd_scene load_steps=14 format=3 uid="uid://cw2sukhi82fgp"]
 
 [ext_resource type="Texture2D" uid="uid://c3w5pqc8vjsjt" path="res://map/tileset.png" id="1_l7bjk"]
 [ext_resource type="Script" path="res://main.gd" id="1_m04ax"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bthh8bokg06qu" path="res://equipment/chop_board/chop_board.tscn" id="5_xcb3k"]
 [ext_resource type="PackedScene" uid="uid://b0qqscc3yl72j" path="res://equipment/bin/bin.tscn" id="7_ui7ao"]
 [ext_resource type="PackedScene" uid="uid://dbg04egj6hkiu" path="res://equipment/fireplace/fireplace.tscn" id="8_8rbuo"]
+[ext_resource type="PackedScene" uid="uid://djphhge7lb61q" path="res://equipment/mortar/mortar.tscn" id="11_s1vc2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0v1r0"]
 texture = ExtResource("1_l7bjk")
@@ -86,6 +87,9 @@ position = Vector2(-432, 144)
 
 [node name="Fireplace" parent="Equipments" instance=ExtResource("8_8rbuo")]
 position = Vector2(-432, 16)
+
+[node name="Mortar" parent="Equipments" instance=ExtResource("11_s1vc2")]
+position = Vector2(240, -216)
 
 [editable path="Player1"]
 [editable path="Player2"]
