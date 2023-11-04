@@ -28,6 +28,7 @@ sources/0 = SubResource("TileSetAtlasSource_0v1r0")
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_i1gt7")
 format = 2
 layer_0/name = "background"
