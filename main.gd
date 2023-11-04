@@ -1,13 +1,5 @@
 extends Node
 
-var score = 0
-
-func resetScore():
-	score = 0
-
-func increaseScore(i):
-	score = score + i
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
