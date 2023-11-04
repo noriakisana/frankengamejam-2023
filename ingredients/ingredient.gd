@@ -7,7 +7,8 @@ enum Type {
 	UNICORN,
 	FROG,
 	HEART,
-	SNAKE
+	SNAKE,
+	CHOPPED_HEART
 }
 
 @export var type : Type

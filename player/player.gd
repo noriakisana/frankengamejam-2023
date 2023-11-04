@@ -19,11 +19,13 @@ var dir : Vector2
 func _ready():
 	if is_player_1:
 		receive_useable(load("res://ingredients/fairydust.tres"))
+	else:
+		receive_useable(load("res://ingredients/heart.tres"))
 
 func _unhandled_input(event):
 	var animationPlayer = $Visual/AnimationPlayer
 	if is_player_1:
-		if event is InputEventKey:
+		if event is InputEventKey or event is InputEventJoypadMotion:
 			if event.is_action_pressed("walk_right_p1"):
 				right_pressed = 1
 				get_node("Visual").set_flip_h(false)
@@ -53,7 +55,7 @@ func _unhandled_input(event):
 				up_pressed = 0
 				animationPlayer.stop()
 	else:
-		if event is InputEventKey or event is InputEventJoypadMotion:
+		if event is InputEventKey:
 			if event.is_action_pressed("walk_right_p2"):
 				right_pressed = 1
 				get_node("Visual").set_flip_h(false)

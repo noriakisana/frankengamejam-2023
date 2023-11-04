@@ -9,5 +9,5 @@ region = Rect2(96, 0, 32, 32)
 
 [resource]
 script = ExtResource("1_2tyrx")
-type = 1
+type = 3
 texture = SubResource("AtlasTexture_lidbp")
