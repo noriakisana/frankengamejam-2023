@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://squw2lotnxkw"]
+
+[ext_resource type="Texture2D" uid="uid://bewcyxw3jq8s1" path="res://ingredients/chopped_hearth/chopped_heart.png" id="1_2sjog"]
+
+[node name="chopped_heart" type="Sprite2D"]
+texture = ExtResource("1_2sjog")
