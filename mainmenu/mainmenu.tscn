@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7mlhj3e5v2wb"]
+
+[ext_resource type="Shader" path="res://mainmenu/background-image.gdshader" id="1_qhlt8"]
+[ext_resource type="Texture2D" uid="uid://cn2c8aak7ja04" path="res://mainmenu/menu_background.png" id="1_ybnhb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iy0qw"]
+shader = ExtResource("1_qhlt8")
+shader_parameter/difference = 0.0
+
+[node name="mainmenu" type="Node2D"]
+scale = Vector2(50, 28)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_iy0qw")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ybnhb")
+expand_mode = 2
