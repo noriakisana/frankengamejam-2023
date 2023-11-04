@@ -53,7 +53,7 @@ func _unhandled_input(event):
 				up_pressed = 0
 				animationPlayer.stop()
 	else:
-		if event is InputEventKey:
+		if event is InputEventKey or event is InputEventJoypadMotion:
 			if event.is_action_pressed("walk_right_p2"):
 				right_pressed = 1
 				get_node("Visual").set_flip_h(false)
