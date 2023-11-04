@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="Potion" load_steps=2 format=3 uid="uid://ba10d2tip1x2k"]
+[gd_resource type="Resource" script_class="Potion" load_steps=2 format=3 uid="uid://btmbouk2ltp4l"]
 
-[ext_resource type="Script" path="res://traenke/potion.gd" id="1_dns70"]
+[ext_resource type="Script" path="res://traenke/potion.gd" id="1_pi03h"]
 
 [resource]
-script = ExtResource("1_dns70")
+script = ExtResource("1_pi03h")
 type = 0

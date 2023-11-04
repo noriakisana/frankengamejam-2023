@@ -3,8 +3,12 @@ extends Sprite2D
 class_name Equipment
 
 enum Type {
-	PLACE,
-	SLICE
+	BIN,
+	CALDRON,
+	CHOPBOARD,
+	FIREPLACE,
+	MORTAR,
+	SLOT
 }
 
 @export var interaction_distance : float = 64
