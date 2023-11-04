@@ -7,6 +7,7 @@ func _ready():
 	$ProgressBar.visible = false
 
 func _process(delta):
+	super(delta)
 	if is_processing:
 		var bar_width = ((processing_time - $ProcessTimer.time_left) / processing_time) * 40.0
 		$ProgressBar.size.x = bar_width

@@ -38,13 +38,6 @@ func _process(delta):
 	distance_to_player_1 = vec_to_player_1.length()
 	var vec_to_player_2 : Vector2 = player_2.position - position
 	distance_to_player_2 = vec_to_player_2.length()
-	
-	"""
-	if distance_to_player_1 <= interaction_distance or distance_to_player_2 <= interaction_distance:
-		$InteractionBackground.visible = true
-	else:
-		$InteractionBackground.visible = false
-	"""
 
 func interact(is_player_1 : bool, useable : Useable):
 	var player
@@ -55,7 +48,6 @@ func interact(is_player_1 : bool, useable : Useable):
 	else:
 		player = player_2
 		distance_to_player = distance_to_player_2
-	print(distance_to_player)
 	if distance_to_player <= interaction_distance:
 		if is_processing: # there is currently something processing
 			return
