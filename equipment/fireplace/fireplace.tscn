@@ -51,3 +51,5 @@ color = Color(0, 0.780392, 0.780392, 1)
 
 [node name="ProcessTimer" type="Timer" parent="."]
 one_shot = true
+
+[connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]
