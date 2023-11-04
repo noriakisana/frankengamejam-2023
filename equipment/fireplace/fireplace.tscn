@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbg04egj6hkiu"]
+[gd_scene load_steps=5 format=3 uid="uid://dbg04egj6hkiu"]
 
-[ext_resource type="Texture2D" uid="uid://dv3lxr5avywgj" path="res://equipment/fireplace/fierplace.png" id="1_xpx0t"]
+[ext_resource type="Script" path="res://equipment/fireplace/fireplace.gd" id="1_h641d"]
+[ext_resource type="Texture2D" uid="uid://b6pvpomaqbila" path="res://equipment/fireplace/fierplace.png" id="1_xpx0t"]
 
 [sub_resource type="Animation" id="Animation_3663l"]
 resource_name = "fireplace_animation"
@@ -24,14 +25,31 @@ _data = {
 "fireplace_animation": SubResource("Animation_3663l")
 }
 
-[node name="fireplace" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Fireplace" type="Sprite2D"]
 texture = ExtResource("1_xpx0t")
 vframes = 4
-frame = 3
+script = ExtResource("1_h641d")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_b3wfr")
 }
+
+[node name="ProgressBar" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -40.0
+offset_right = 4.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.780392, 0.780392, 1)
+
+[node name="ProcessTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

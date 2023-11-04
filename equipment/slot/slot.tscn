@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://mcki5xiihsdi"]
+
+[ext_resource type="Texture2D" uid="uid://b0j53d8ra8jox" path="res://equipment/slot/slot.png" id="1_ejkcv"]
+[ext_resource type="Script" path="res://equipment/slot/slot.gd" id="2_1n0h5"]
+
+[node name="Slot" type="Sprite2D"]
+texture = ExtResource("1_ejkcv")
+script = ExtResource("2_1n0h5")
+
+[node name="ProcessTimer" type="Timer" parent="."]
+one_shot = true
