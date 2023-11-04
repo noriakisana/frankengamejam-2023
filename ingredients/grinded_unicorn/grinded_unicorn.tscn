@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://l7v7jktjiaop"]
 
-[ext_resource type="Texture2D" uid="uid://bq3ecyddlmou6" path="res://ingredients/grinded_unicorn/grinded_unicorn.png" id="1_ki22v"]
+[ext_resource type="Texture2D" uid="uid://dkuaiyno4qd3y" path="res://ingredients/grinded_unicorn/grinded_unicorn.png" id="1_ki22v"]
 
 [node name="grinded_unicorn" type="Sprite2D"]
 texture = ExtResource("1_ki22v")
