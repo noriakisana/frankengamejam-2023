@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cdex5bd6fjwm3"]
+
+[node name="WorldIngredient" type="Sprite2D"]

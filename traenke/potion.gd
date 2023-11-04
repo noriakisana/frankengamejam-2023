@@ -1,4 +1,4 @@
-extends Resource
+extends Useable
 
 class_name Potion
 
@@ -14,6 +14,6 @@ func _init(type=Type.EMPTY):
 
 func get_scene():
 	if self.type == Type.EMPTY:
-		return load("res://traenke/trank_leer/trank_leer.tscn")
+		return load("res://traenke/trank_leer/trank_leer.tscn").instantiate()
 	elif self.type == Type.GREEN:
-		return load("res://traenke/trank_green/trank_green.tscn")
+		return load("res://traenke/trank_green/trank_green.tscn").instantiate()
