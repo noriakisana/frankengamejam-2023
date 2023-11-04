@@ -59,3 +59,5 @@ offset_bottom = -14.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 color = Color(0, 0.780392, 0.780392, 1)
+
+[connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

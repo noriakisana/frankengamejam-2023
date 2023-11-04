@@ -51,7 +51,8 @@ func interact(is_player_1 : bool, useable : Useable):
 	if distance_to_player <= interaction_distance:
 		if is_processing: # there is currently something processing
 			return
-		if placed_useable: # there is a placed usable
+		
+		if placed_useable and !((self.get_name() == "CaldronLeft" or self.get_name() == "CaldronRight") and self.recipe.size() != self.ingredients.size()): # there is a placed usable
 			var success = player.receive_useable(placed_useable)
 			if success: # player can pickup useable
 				useable_node.queue_free()
@@ -65,6 +66,8 @@ func interact(is_player_1 : bool, useable : Useable):
 				useable_node = placed_useable.get_scene()
 				useable_node.scale = Vector2(0.7, 0.7)
 				add_child(useable_node)
+				if self.get_name() == "CaldronLeft" or self.get_name() == "CaldronRight":
+					self.ingredients.append(useable.type)
 				start_processing()
 
 func is_compatible(useable : Useable):

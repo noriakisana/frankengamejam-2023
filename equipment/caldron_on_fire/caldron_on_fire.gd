@@ -1,8 +1,10 @@
 extends Equipment
 
+class_name caldron_on_fire
+
 @export var processing_time = 5
 var ingredients = []
-var recipe = [Ingredient.Type.CHOPPED_HEART, Ingredient.Type.FRIED_FROG]
+var recipe = [Ingredient.Type.HEART, Ingredient.Type.FROG]
 func _ready():
 	super()
 	$ProgressBar.visible = false
@@ -19,25 +21,27 @@ func is_compatible(useable : Useable):
 
 
 	
-	
 func process_potion():
 	is_processing = true
 	$ProgressBar.visible = true
 	$ProcessTimer.wait_time = processing_time
 	$ProcessTimer.start()
+	#print("jaaa?")
 	$AnimationPlayer.play("caldron_on_fire_animation")
+	#print("nein?")
 
 func start_processing():
+	
 	var fullfilled = true
 	for ingredient in recipe:
+		
 		if !ingredients.has(ingredient):
 			fullfilled = false
 	if fullfilled:
 		process_potion()
 		
 func _on_process_timer_timeout():
-	$ProgressBar.visible = false
-	if true: #placed_useable.type == Ingredient.Type.FROG:
+	if placed_useable.type == Ingredient.Type.HEART:
 		placed_useable = load("res://traenke/trank_green/green_potion.tres")
 
 		useable_node.queue_free()
