@@ -25,8 +25,8 @@ _data = {
 "player_walk": SubResource("Animation_v1spg")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_awoj0"]
-radius = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yaox8"]
+size = Vector2(22, 10)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_klph8")
@@ -41,4 +41,5 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_awoj0")
+position = Vector2(-1, 11)
+shape = SubResource("RectangleShape2D_yaox8")
