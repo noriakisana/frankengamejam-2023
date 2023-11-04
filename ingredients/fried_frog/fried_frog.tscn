@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dghpnfc4pbj0j"]
+
+[ext_resource type="Texture2D" uid="uid://ch2i34tiqehuc" path="res://ingredients/fried_frog/fried_frog.png" id="1_vr5um"]
+
+[node name="FriedFrog" type="Sprite2D"]
+texture = ExtResource("1_vr5um")

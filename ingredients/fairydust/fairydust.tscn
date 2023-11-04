@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bo7n7766nada"]
 
-[ext_resource type="Texture2D" uid="uid://c1wyfm8uj3tr4" path="res://ingredients/fairydust/fairydust.png" id="1_lfwb1"]
+[ext_resource type="Texture2D" uid="uid://6ruk75chbb2d" path="res://ingredients/fairydust/fairydust.png" id="1_lfwb1"]
 
 [node name="fairydust" type="Sprite2D"]
 texture = ExtResource("1_lfwb1")

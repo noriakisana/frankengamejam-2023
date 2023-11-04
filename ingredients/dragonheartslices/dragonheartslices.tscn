@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccxdlvlb5o5rc"]
 
-[ext_resource type="Texture2D" uid="uid://iy43guycb5fc" path="res://ingredients/dragonheartslices/dragonheartslices.png" id="1_o6fmj"]
+[ext_resource type="Texture2D" uid="uid://cc4oif7amiu37" path="res://ingredients/dragonheartslices/dragonheartslices.png" id="1_o6fmj"]
 
 [node name="dragonheartslices" type="Sprite2D"]
 texture = ExtResource("1_o6fmj")
