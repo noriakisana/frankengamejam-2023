@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://l7v7jktjiaop"]
+
+[ext_resource type="Texture2D" uid="uid://dkuaiyno4qd3y" path="res://ingredients/grinded_fairydust/grinded_fairydust.png" id="1_gtmfx"]
+
+[node name="grinded_fairydust" type="Sprite2D"]
+texture = ExtResource("1_gtmfx")

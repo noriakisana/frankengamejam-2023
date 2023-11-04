@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cch2n0at47qwt"]
+
+[ext_resource type="Texture2D" uid="uid://b1wy30fstgyug" path="res://ingredients/unicorn/unicorn.png" id="1_op7nw"]
+
+[node name="unicorn" type="Sprite2D"]
+texture = ExtResource("1_op7nw")
