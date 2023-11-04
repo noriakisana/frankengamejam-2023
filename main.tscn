@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cw2sukhi82fgp"]
+[gd_scene load_steps=15 format=3 uid="uid://cw2sukhi82fgp"]
 
 [ext_resource type="Texture2D" uid="uid://c3w5pqc8vjsjt" path="res://map/tileset.png" id="1_l7bjk"]
 [ext_resource type="Script" path="res://main.gd" id="1_m04ax"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b0qqscc3yl72j" path="res://equipment/bin/bin.tscn" id="7_ui7ao"]
 [ext_resource type="PackedScene" uid="uid://dbg04egj6hkiu" path="res://equipment/fireplace/fireplace.tscn" id="8_8rbuo"]
 [ext_resource type="PackedScene" uid="uid://djphhge7lb61q" path="res://equipment/mortar/mortar.tscn" id="11_s1vc2"]
+[ext_resource type="PackedScene" uid="uid://dwbtiapktvd17" path="res://equipment/caldron_on_fire/caldron_on_fire.tscn" id="12_y8u6k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0v1r0"]
 texture = ExtResource("1_l7bjk")
@@ -61,11 +62,11 @@ layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(-458752, 196608, 0, -458751, 196608, 0, -458750, 196608, 0, -458749, 196608, 0, -458748, 196608, 0, -458747, 196608, 0, -458746, 196608, 0, -458745, 196608, 0, -458744, 196608, 0, -458743, 196608, 0, -458742, 196608, 0, -458741, 196608, 0, -458740, 131072, 0, -393218, 196608, 0, -393219, 196608, 0, -393220, 196608, 0, -393221, 196608, 0, -393222, 196608, 0, -393223, 196608, 0, -393224, 196608, 0, -393225, 196608, 0, -393226, 196608, 0, -393227, 196608, 0, -393228, 196608, 0, -393229, 196608, 0, -393230, 131072, 0, -327694, 131072, 0, -262158, 131072, 0, -196622, 131072, 0, -131086, 131072, 0, -65550, 131072, 0, -14, 131072, 0, 65522, 131072, 0, 131058, 131072, 0, 196594, 131072, 0, 262130, 131072, 0, 393202, 131072, 0, 458738, 131072, 0, 458739, 131072, 0, 458740, 131072, 0, 458741, 131072, 0, 458742, 131072, 0, 458743, 131072, 0, 458744, 131072, 0, 458745, 131072, 0, 458746, 131072, 0, 458747, 131072, 0, 458748, 131072, 0, 458749, 131072, 0, 458750, 131072, 0, 393216, 131072, 0, 393217, 131072, 0, 393218, 131072, 0, 393219, 131072, 0, 393220, 131072, 0, 393221, 131072, 0, 393222, 131072, 0, 393223, 131072, 0, 393224, 131072, 0, 393225, 131072, 0, 393226, 131072, 0, 393227, 131072, 0, 393228, 131072, 0, 327692, 131072, 0, 262156, 131072, 0, 196620, 131072, 0, 131084, 131072, 0, 65548, 131072, 0, 12, 131072, 0, -65524, 131072, 0, -131060, 131072, 0, -196596, 131072, 0, -262132, 131072, 0, -327668, 131072, 0, -393204, 131072, 0, 327666, 131072, 0)
 
 [node name="Player1" parent="." instance=ExtResource("2_01d6f")]
-position = Vector2(-210, 0)
+position = Vector2(-210, -60)
 script = ExtResource("4_tpwwe")
 
 [node name="Player2" parent="." instance=ExtResource("2_01d6f")]
-position = Vector2(210, 0)
+position = Vector2(210, -60)
 script = ExtResource("5_se5tk")
 
 [node name="Visual" parent="Player2" index="0"]
@@ -96,6 +97,14 @@ position = Vector2(-432, 16)
 
 [node name="Mortar" parent="Equipments" instance=ExtResource("11_s1vc2")]
 position = Vector2(240, -216)
+
+[node name="CaldronLeft" parent="Equipments" instance=ExtResource("12_y8u6k")]
+position = Vector2(-210, 0)
+scale = Vector2(2, 2)
+
+[node name="CaldronRight" parent="Equipments" instance=ExtResource("12_y8u6k")]
+position = Vector2(210, 0)
+scale = Vector2(2, 2)
 
 [editable path="Player1"]
 [editable path="Player2"]

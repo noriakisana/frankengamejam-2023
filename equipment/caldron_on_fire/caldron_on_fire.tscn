@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwbtiapktvd17"]
+[gd_scene load_steps=6 format=3 uid="uid://dwbtiapktvd17"]
 
-[ext_resource type="Texture2D" uid="uid://0xhk1namfc4q" path="res://equipment/caldron_on_fire/caldron_on_fire.png" id="1_vt0dd"]
+[ext_resource type="Texture2D" uid="uid://d15ifq6t83o20" path="res://equipment/caldron_on_fire/caldron_on_fire.png" id="1_vt0dd"]
+[ext_resource type="Script" path="res://equipment/caldron_on_fire/caldron_on_fire.gd" id="1_xw0hb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40mlm"]
+size = Vector2(29, 12)
 
 [sub_resource type="Animation" id="Animation_s8qjd"]
 resource_name = "caldron_on_fire_animation"
@@ -24,14 +28,34 @@ _data = {
 "caldron_on_fire_animation": SubResource("Animation_s8qjd")
 }
 
-[node name="caldron_on_fire" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="caldron_on_fire" type="Sprite2D"]
 texture = ExtResource("1_vt0dd")
-vframes = 3
-frame = 1
+vframes = 4
+script = ExtResource("1_xw0hb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+[node name="StaticBody2d" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2d"]
+position = Vector2(0.5, 6)
+shape = SubResource("RectangleShape2D_40mlm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../StaticBody2d")
 libraries = {
 "": SubResource("AnimationLibrary_jp6iy")
 }
+
+[node name="ProcessTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ProgressBar" type="ColorRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = -19.0
+offset_right = 4.0
+offset_bottom = -14.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+color = Color(0, 0.780392, 0.780392, 1)
