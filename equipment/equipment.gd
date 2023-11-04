@@ -33,7 +33,6 @@ func _ready():
 	player_1.interacted.connect(interact)
 	player_2.interacted.connect(interact)
 
-
 func _process(delta):
 	var vec_to_player_1 : Vector2 = player_1.position - position
 	distance_to_player_1 = vec_to_player_1.length()
@@ -56,9 +55,10 @@ func interact(is_player_1 : bool, useable : Useable):
 	else:
 		player = player_2
 		distance_to_player = distance_to_player_2
+	print(distance_to_player)
 	if distance_to_player <= interaction_distance:
-		#if is_processing: # there is currently something processing
-		#	return
+		if is_processing: # there is currently something processing
+			return
 		if placed_useable: # there is a placed usable
 			var success = player.receive_useable(placed_useable)
 			if success: # player can pickup useable
