@@ -19,6 +19,8 @@ var dir : Vector2
 func _ready():
 	if is_player_1:
 		receive_useable(load("res://ingredients/fairydust.tres"))
+	else:
+		receive_useable(load("res://ingredients/heart.tres"))
 
 func _unhandled_input(event):
 	var animationPlayer = $Visual/AnimationPlayer

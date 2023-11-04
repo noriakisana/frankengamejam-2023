@@ -6,4 +6,15 @@
 [node name="ChopBoard" type="Sprite2D"]
 texture = ExtResource("1_jmv1s")
 script = ExtResource("2_tr1tp")
-interaction_distance = null
+
+[node name="ProcessTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ProgressBar" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = -14.0
+color = Color(0, 0.803922, 0.803922, 1)
+
+[connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

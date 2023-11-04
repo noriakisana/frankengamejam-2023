@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cw2sukhi82fgp"]
+[gd_scene load_steps=9 format=3 uid="uid://cw2sukhi82fgp"]
 
 [ext_resource type="Texture2D" uid="uid://c3w5pqc8vjsjt" path="res://map/tileset.png" id="1_l7bjk"]
 [ext_resource type="Script" path="res://main.gd" id="1_m04ax"]
@@ -72,11 +72,9 @@ zoom = Vector2(1.8, 1.8)
 
 [node name="Slot" parent="Equipments" instance=ExtResource("4_xc6mp")]
 position = Vector2(-16, 16)
-interaction_distance = 64.0
 
 [node name="ChopBoard" parent="Equipments" instance=ExtResource("5_xcb3k")]
 position = Vector2(-16, -80)
-interaction_distance = null
 
 [editable path="Player1"]
 [editable path="Player2"]

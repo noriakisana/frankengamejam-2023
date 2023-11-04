@@ -18,6 +18,8 @@ var distance_to_player_2 : float
 
 var useable_node : Node2D
 
+var is_processing = false
+
 func _ready():
 	"""
 	self.placed_useable = load("res://ingredients/snake.tres")
@@ -55,6 +57,8 @@ func interact(is_player_1 : bool, useable : Useable):
 		player = player_2
 		distance_to_player = distance_to_player_2
 	if distance_to_player <= interaction_distance:
+		#if is_processing: # there is currently something processing
+		#	return
 		if placed_useable: # there is a placed usable
 			var success = player.receive_useable(placed_useable)
 			if success: # player can pickup useable
@@ -69,6 +73,10 @@ func interact(is_player_1 : bool, useable : Useable):
 				useable_node = placed_useable.get_scene()
 				useable_node.scale = Vector2(0.7, 0.7)
 				add_child(useable_node)
+				start_processing()
 
 func is_compatible(useable : Useable):
 	return false
+
+func start_processing():
+	pass
