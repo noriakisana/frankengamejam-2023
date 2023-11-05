@@ -12,8 +12,8 @@ enum Type {
 	SNAKE,
 	CHOPPED_HEART,
 	FRIED_SNAKE
-}# Always add items to Type and ingredients, and add png in caldron_on_fire if-statement
-const ingredients = [Type.FAIRYDUST, Type.UNICORN,Type.GRINDED_UNICORN, Type.FROG, Type.FRIED_FROG, Type.HEART, Type.SNAKE, Type.CHOPPED_HEART, Type.FRIED_SNAKE]
+}
+
 @export var type : Type
 
 func get_scene():
