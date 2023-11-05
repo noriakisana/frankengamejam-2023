@@ -45,7 +45,6 @@ _data = {
 [node name="Mortar" type="Sprite2D"]
 texture = ExtResource("1_nlken")
 vframes = 11
-frame = 1
 script = ExtResource("2_i8uip")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

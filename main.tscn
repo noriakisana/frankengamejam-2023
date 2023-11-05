@@ -68,7 +68,6 @@ process_mode = 3
 script = ExtResource("2_vbgso")
 
 [node name="TileMap" type="TileMap" parent="."]
-y_sort_enabled = true
 tile_set = SubResource("TileSet_i1gt7")
 format = 2
 layer_0/name = "background"
@@ -88,72 +87,82 @@ layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(-458752, 196608, 0, -458751, 196608, 0, -458750, 196608, 0, -458749, 196608, 0, -458748, 196608, 0, -458747, 196608, 0, -458746, 196608, 0, -458745, 196608, 0, -458744, 196608, 0, -458743, 196608, 0, -458742, 196608, 0, -458741, 196608, 0, -458740, 131072, 0, -393218, 196608, 0, -393219, 196608, 0, -393220, 196608, 0, -393221, 196608, 0, -393222, 196608, 0, -393223, 196608, 0, -393224, 196608, 0, -393225, 196608, 0, -393226, 196608, 0, -393227, 196608, 0, -393228, 196608, 0, -393229, 196608, 0, -393230, 131072, 0, -327694, 131072, 0, -262158, 131072, 0, -196622, 131072, 0, -131086, 131072, 0, -65550, 131072, 0, -14, 131072, 0, 65522, 131072, 0, 131058, 131072, 0, 196594, 131072, 0, 262130, 131072, 0, 393202, 131072, 0, 458738, 131072, 0, 458739, 131072, 0, 458740, 131072, 0, 458741, 131072, 0, 458742, 131072, 0, 458743, 131072, 0, 458744, 131072, 0, 458745, 131072, 0, 458746, 131072, 0, 458747, 131072, 0, 458748, 131072, 0, 458749, 131072, 0, 458750, 131072, 0, 393216, 131072, 0, 393217, 131072, 0, 393218, 131072, 0, 393219, 131072, 0, 393220, 131072, 0, 393221, 131072, 0, 393222, 131072, 0, 393223, 131072, 0, 393224, 131072, 0, 393225, 131072, 0, 393226, 131072, 0, 393227, 131072, 0, 393228, 131072, 0, 327692, 131072, 0, 262156, 131072, 0, 196620, 131072, 0, 131084, 131072, 0, 65548, 131072, 0, 12, 131072, 0, -65524, 131072, 0, -131060, 131072, 0, -196596, 131072, 0, -262132, 131072, 0, -327668, 131072, 0, -393204, 131072, 0, 327666, 131072, 0)
 
-[node name="Player1" parent="." instance=ExtResource("2_01d6f")]
-position = Vector2(-210, -60)
-script = ExtResource("4_tpwwe")
-
-[node name="Player2" parent="." instance=ExtResource("2_01d6f")]
-position = Vector2(210, -60)
-script = ExtResource("5_se5tk")
-
-[node name="Visual" parent="Player2" index="0"]
-texture = ExtResource("3_p8bcv")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.8, 1.8)
 
-[node name="Equipments" type="Node2D" parent="."]
+[node name="YSortStuff" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="Slot" parent="Equipments" instance=ExtResource("4_xc6mp")]
+[node name="Player1" parent="YSortStuff" instance=ExtResource("2_01d6f")]
+position = Vector2(-210, -60)
+script = ExtResource("4_tpwwe")
+
+[node name="Player2" parent="YSortStuff" instance=ExtResource("2_01d6f")]
+position = Vector2(210, -60)
+script = ExtResource("5_se5tk")
+
+[node name="Visual" parent="YSortStuff/Player2" index="0"]
+texture = ExtResource("3_p8bcv")
+
+[node name="Equipments" type="Node2D" parent="YSortStuff"]
+y_sort_enabled = true
+
+[node name="Slot" parent="YSortStuff/Equipments" instance=ExtResource("4_xc6mp")]
 position = Vector2(-16, 16)
 
-[node name="Slot2" parent="Equipments" instance=ExtResource("4_xc6mp")]
+[node name="Slot2" parent="YSortStuff/Equipments" instance=ExtResource("4_xc6mp")]
 position = Vector2(-176, 208)
 
-[node name="Slot3" parent="Equipments" instance=ExtResource("4_xc6mp")]
+[node name="Slot3" parent="YSortStuff/Equipments" instance=ExtResource("4_xc6mp")]
 position = Vector2(400, 80)
 
-[node name="ChopBoard" parent="Equipments" instance=ExtResource("5_xcb3k")]
+[node name="ChopBoard" parent="YSortStuff/Equipments" instance=ExtResource("5_xcb3k")]
 position = Vector2(-16, -80)
 
-[node name="Fireplace" parent="Equipments" instance=ExtResource("8_8rbuo")]
+[node name="Fireplace" parent="YSortStuff/Equipments" instance=ExtResource("8_8rbuo")]
 position = Vector2(-432, 16)
 
-[node name="Mortar" parent="Equipments" instance=ExtResource("11_s1vc2")]
+[node name="Mortar" parent="YSortStuff/Equipments" instance=ExtResource("11_s1vc2")]
 position = Vector2(240, -216)
 
-[node name="CaldronLeft" parent="Equipments" instance=ExtResource("12_y8u6k")]
+[node name="CaldronLeft" parent="YSortStuff/Equipments" instance=ExtResource("12_y8u6k")]
 position = Vector2(-210, 0)
 scale = Vector2(2, 2)
 script = ExtResource("13_20xda")
 
-[node name="CaldronRight" parent="Equipments" instance=ExtResource("12_y8u6k")]
+[node name="CaldronRight" parent="YSortStuff/Equipments" instance=ExtResource("12_y8u6k")]
 position = Vector2(210, 0)
 scale = Vector2(2, 2)
 script = ExtResource("14_6jdh6")
 
-[node name="Portal" parent="Equipments" instance=ExtResource("13_oyv04")]
+[node name="Portal" parent="YSortStuff/Equipments" instance=ExtResource("13_oyv04")]
 position = Vector2(-17, -216)
 scale = Vector2(2, 2)
 
-[node name="Bins" type="Node2D" parent="."]
+[node name="Bins" type="Node2D" parent="YSortStuff"]
+y_sort_enabled = true
 
-[node name="HeartBin" parent="Bins" instance=ExtResource("7_ui7ao")]
-position = Vector2(-432, 112)
+[node name="HeartBin" parent="YSortStuff/Bins" instance=ExtResource("7_ui7ao")]
+y_sort_enabled = true
+position = Vector2(-400, 112)
 
-[node name="FrogBin" parent="Bins" instance=ExtResource("7_ui7ao")]
-position = Vector2(208, 112)
+[node name="FrogBin" parent="YSortStuff/Bins" instance=ExtResource("7_ui7ao")]
+y_sort_enabled = true
+position = Vector2(16, 176)
 ingredient = SubResource("Resource_a2xjs")
 
-[node name="FairydustBin" parent="Bins" instance=ExtResource("7_ui7ao")]
-position = Vector2(176, 208)
+[node name="FairydustBin" parent="YSortStuff/Bins" instance=ExtResource("7_ui7ao")]
+y_sort_enabled = true
+position = Vector2(368, 176)
 ingredient = SubResource("Resource_gqxwm")
 
-[node name="UnicornBin" parent="Bins" instance=ExtResource("7_ui7ao")]
-position = Vector2(400, 16)
+[node name="UnicornBin" parent="YSortStuff/Bins" instance=ExtResource("7_ui7ao")]
+y_sort_enabled = true
+position = Vector2(368, -112)
 ingredient = SubResource("Resource_0pg0a")
 
-[node name="SnakeBin" parent="Bins" instance=ExtResource("7_ui7ao")]
+[node name="SnakeBin" parent="YSortStuff/Bins" instance=ExtResource("7_ui7ao")]
+y_sort_enabled = true
 position = Vector2(-207, -176)
 ingredient = SubResource("Resource_2i0au")
 
@@ -202,5 +211,5 @@ text = "TIME UP"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
-[editable path="Player1"]
-[editable path="Player2"]
+[editable path="YSortStuff/Player1"]
+[editable path="YSortStuff/Player2"]

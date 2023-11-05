@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7mlhj3e5v2wb"]
+[gd_scene load_steps=8 format=3 uid="uid://c7mlhj3e5v2wb"]
 
 [ext_resource type="Shader" path="res://mainmenu/background-image.gdshader" id="1_qhlt8"]
 [ext_resource type="Texture2D" uid="uid://cn2c8aak7ja04" path="res://mainmenu/menu_background.png" id="1_ybnhb"]
@@ -8,6 +8,12 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iy0qw"]
 shader = ExtResource("1_qhlt8")
 shader_parameter/difference = 0.0
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_ukt1g"]
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_ltse2"]
+events = [SubResource("InputEventJoypadButton_ukt1g")]
 
 [node name="mainmenu" type="Node2D"]
 process_mode = 3
@@ -51,6 +57,7 @@ script = ExtResource("3_v4kh2")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_g6o3y")
 theme_override_font_sizes/font_size = 20
+shortcut = SubResource("Shortcut_ltse2")
 text = "Start"
 
 [connection signal="pressed" from="Control/HBoxContainer/VBoxContainer/StartButton" to="Control/HBoxContainer/VBoxContainer" method="_on_start_button_pressed"]
