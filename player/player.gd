@@ -14,7 +14,11 @@ var right_pressed = 0
 var up_pressed = 0
 var down_pressed = 0
 
+var current_speed = speed
+
 var dir : Vector2
+
+var is_running : bool
 
 func _physics_process(delta):
 	dir = Vector2(
@@ -23,7 +27,11 @@ func _physics_process(delta):
 	).normalized()
 	
 	# moving
-	velocity = dir * speed
+	if is_running:
+		current_speed = speed * 1.5
+	else:
+		current_speed = speed
+	velocity = dir * current_speed
 	move_and_slide()
 
 func receive_useable(useable : Useable):

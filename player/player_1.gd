@@ -26,6 +26,9 @@ func _unhandled_input(event):
 		if event.is_action_pressed("walk_up_p1"):
 			up_pressed = 1
 			animationPlayer.play("player_walk")	
+		
+		if event.is_action_pressed("run_p1"):
+			is_running = true
 			
 					
 		if event.is_action_released("walk_right_p1"):
@@ -40,6 +43,9 @@ func _unhandled_input(event):
 		if event.is_action_released("walk_up_p1"):
 			up_pressed = 0
 			animationPlayer.stop()
+			
+		if event.is_action_released("run_p1"):
+			is_running = false
 
 func _physics_process(delta):
 	super(delta)
