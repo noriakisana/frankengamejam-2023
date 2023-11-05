@@ -73,7 +73,6 @@ layout_mode = 0
 offset_left = -12.0
 offset_top = 12.0
 offset_right = 52.0
-offset_bottom = 22.0
-alignment = 1
+offset_bottom = 26.0
 
 [connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

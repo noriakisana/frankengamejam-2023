@@ -4,19 +4,22 @@ class_name caldron_on_fire
 
 @export var processing_time = 5
 var ingredients = []
-var recipe = [Ingredient.Type.FROG,Ingredient.Type.HEART]
+var recipe = [Ingredient.Type.FROG,Ingredient.Type.HEART] 
+
+@onready var panel_template = preload("res://equipment/caldron_on_fire/recipe_panel/RecipePanel.tscn")
 
 @onready var container = $Control/HBoxContainer
 
 
-@onready var panel_template = preload("res://equipment/caldron_on_fire/recipe_panel/RecipePanel.tscn")
-
 func _ready():
 	super()
+	
+	
 	$ProgressBar.visible = false
 	
 	#var texture_rect = TextureRect.new()
 	#texture_rect.texture = load("res://ingredients/unicorn/unicorn1.png")
+
 	show_recipe()
 	
 func show_recipe():
@@ -24,7 +27,10 @@ func show_recipe():
 		var ingredient = panel_template.instantiate()
 		var texture_rect = ingredient.get_child(0)
 		texture_rect.set_texture(get_ingredient_img(item_type))
+		
 		container.add_child(ingredient)
+		
+		
 		
 func get_ingredient_img(ingredient_type: Type):
 	if ingredient_type == Ingredient.Type.FAIRYDUST:

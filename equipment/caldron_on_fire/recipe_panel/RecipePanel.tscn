@@ -1,15 +1,20 @@
 [gd_scene format=3 uid="uid://toy0swexrj4e"]
 
 [node name="RecipePanel" type="Panel"]
+custom_minimum_size = Vector2(10, 5)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1900.0
-offset_bottom = -1060.0
+offset_left = -6.0
+offset_right = -1914.0
+offset_bottom = -1075.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Ingredient" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = 1.45
+offset_top = 0.5
+offset_right = 21.45
+offset_bottom = 20.5
+scale = Vector2(0.25, 0.25)
