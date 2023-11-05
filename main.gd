@@ -1,6 +1,6 @@
 extends Node
 
-@export var time_limit : int = 60
+@export var time_limit : int = 60 * 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
