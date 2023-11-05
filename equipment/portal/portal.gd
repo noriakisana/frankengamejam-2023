@@ -19,7 +19,7 @@ func start_processing():
 	#Score.increaseScore(1)
 	useable_node.startPortalAnimation()
 	await get_tree().create_timer(2.1).timeout
-	useable_node.queuee_free()
+	useable_node.queue_free()
 	placed_useable = null
 	#is_processing = true
 		#$ProgressBar.visible = true
