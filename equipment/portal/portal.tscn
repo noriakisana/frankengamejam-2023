@@ -1,12 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://cs5xf0xnx3rqd"]
 
-[ext_resource type="Texture2D" uid="uid://bksoottguedoq" path="res://equipment/portal/portal.png" id="1_idji4"]
+[ext_resource type="Texture2D" uid="uid://cwqn8iv5ji71u" path="res://equipment/portal/portal.png" id="1_idji4"]
 [ext_resource type="Script" path="res://equipment/portal/portal.gd" id="2_d1ut8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7mo3f"]
 atlas = ExtResource("1_idji4")
 region = Rect2(96, 0, 32, 32)
-margin = Rect2(0, 23, 0, 256)
 
 [sub_resource type="Animation" id="Animation_p20os"]
 resource_name = "mortar_animation"
@@ -29,7 +28,7 @@ _data = {
 "mortar_animation": SubResource("Animation_p20os")
 }
 
-[node name="Portal" type="Sprite2D"]
+[node name="Portal" type="Sprite2D" groups=["portal"]]
 texture = SubResource("AtlasTexture_7mo3f")
 script = ExtResource("2_d1ut8")
 

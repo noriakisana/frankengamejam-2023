@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+score="*res://score.gd"
 Score="*res://score.gd"
 
 [display]
