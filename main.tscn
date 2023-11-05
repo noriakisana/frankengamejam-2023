@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cs5xf0xnx3rqd" path="res://equipment/portal/portal.tscn" id="13_oyv04"]
 [ext_resource type="Script" path="res://equipment/caldron_on_fire/caldron_on_fire_right.gd" id="14_6jdh6"]
 [ext_resource type="Script" path="res://ingredients/ingredient.gd" id="14_y6fyp"]
-[ext_resource type="FontFile" uid="uid://dak3jql4a10vs" path="res://fonts/Antique Witch.otf" id="17_2xx80"]
+[ext_resource type="FontFile" uid="uid://busp5vb6hdyvq" path="res://fonts/Antique Witch.otf" id="17_2xx80"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0v1r0"]
 texture = ExtResource("1_l7bjk")

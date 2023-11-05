@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1y8vceb45r61"]
+[gd_scene load_steps=7 format=3 uid="uid://b3qiwerxx2401"]
 
 [ext_resource type="Texture2D" uid="uid://bsf4nwkrel7kl" path="res://traenke/trank_green/trank_green.png" id="1_ia54c"]
 [ext_resource type="Script" path="res://traenke/trank_green/trank_green.gd" id="2_qtife"]
