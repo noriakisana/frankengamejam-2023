@@ -37,7 +37,7 @@ func get_ingredient_img(ingredient_type: Type):
 	if ingredient_type == Ingredient.Type.FAIRYDUST:
 		return load("res://ingredients/fairydust/fairydust.png")
 	elif ingredient_type == Ingredient.Type.UNICORN:
-		return load("res://ingredients/unicorn/unicorn.tscn")
+		return load("res://ingredients/unicorn/unicorn1.png")
 	elif ingredient_type == Ingredient.Type.GRINDED_UNICORN:
 		return load("res://ingredients/grinded_unicorn/grinded_unicorn.png")
 	elif ingredient_type == Ingredient.Type.FROG:
@@ -60,7 +60,7 @@ func _process(delta):
 		
 
 func is_compatible(useable : Useable):
-	return useable is Ingredient
+	return recipe.has(useable.type)
 
 func new_recipe():
 	recipeSize = recipe.size()
@@ -70,6 +70,7 @@ func new_recipe():
 	for i in range(num):
 		item = randi() % Ingredient.ingredients.size()
 		recipe.append(Ingredient.ingredients[item])
+		print(item)
 	show_recipe()
 
 	
@@ -91,10 +92,10 @@ func start_processing():
 		process_potion()
 		
 func item_added_to_caldron(type: Type):		
-	
 	for panel in container.get_children():
 		if type == panel.type:
 			container.remove_child(panel)
+			break
 		
 func _on_process_timer_timeout():
 		placed_useable = load("res://traenke/trank_green/green_potion.tres")
