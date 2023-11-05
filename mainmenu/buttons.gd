@@ -6,7 +6,6 @@ var first_focus = true
 func _ready():
 	$StartButton.grab_focus()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("exit_game"):
