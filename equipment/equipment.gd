@@ -60,10 +60,10 @@ func interact(is_player_1 : bool, useable : Useable):
 		if is_processing: # there is currently something processing
 			return
 		if placed_useable and !((self.get_name() == "CaldronLeft" or self.get_name() == "CaldronRight") and not self.recipeSize == self.ingredients.size()): # there is a placed usable
-			self.recipeSize = self.recipe.size()
 			var success = player.receive_useable(placed_useable)
 			if success: # player can pickup useable
 				if self.get_name() == "CaldronLeft" or self.get_name() == "CaldronRight":
+					self.recipeSize = self.recipe.size()
 					self.ingredients.clear()
 				useable_node.queue_free()
 				placed_useable = null
