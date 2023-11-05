@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cw2sukhi82fgp"]
+[gd_scene load_steps=17 format=3 uid="uid://cw2sukhi82fgp"]
 
 [ext_resource type="Texture2D" uid="uid://c3w5pqc8vjsjt" path="res://map/tileset.png" id="1_l7bjk"]
 [ext_resource type="Script" path="res://main.gd" id="1_m04ax"]
@@ -8,15 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://mcki5xiihsdi" path="res://equipment/slot/slot.tscn" id="4_xc6mp"]
 [ext_resource type="Script" path="res://player/player_2.gd" id="5_se5tk"]
 [ext_resource type="PackedScene" uid="uid://bthh8bokg06qu" path="res://equipment/chop_board/chop_board.tscn" id="5_xcb3k"]
-[ext_resource type="PackedScene" uid="uid://b0qqscc3yl72j" path="res://bins/bin.tscn" id="7_ui7ao"]
+[ext_resource type="PackedScene" uid="uid://b0qqscc3yl72j" path="res://equipment/bin/bin.tscn" id="7_ui7ao"]
 [ext_resource type="PackedScene" uid="uid://dbg04egj6hkiu" path="res://equipment/fireplace/fireplace.tscn" id="8_8rbuo"]
 [ext_resource type="PackedScene" uid="uid://djphhge7lb61q" path="res://equipment/mortar/mortar.tscn" id="11_s1vc2"]
 [ext_resource type="PackedScene" uid="uid://dwbtiapktvd17" path="res://equipment/caldron_on_fire/caldron_on_fire.tscn" id="12_y8u6k"]
-[ext_resource type="Script" path="res://equipment/caldron_on_fire/caldron_on_fire_left.gd" id="13_20xda"]
 [ext_resource type="Script" path="res://score.gd" id="13_dmlrm"]
 [ext_resource type="PackedScene" uid="uid://cs5xf0xnx3rqd" path="res://equipment/portal/portal.tscn" id="13_oyv04"]
-[ext_resource type="Script" path="res://equipment/caldron_on_fire/caldron_on_fire_right.gd" id="14_6jdh6"]
-[ext_resource type="Script" path="res://ingredients/ingredient.gd" id="14_y6fyp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0v1r0"]
 texture = ExtResource("1_l7bjk")
@@ -41,10 +38,6 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0v1r0")
-
-[sub_resource type="Resource" id="Resource_a2xjs"]
-script = ExtResource("14_y6fyp")
-type = 3
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_m04ax")
@@ -98,6 +91,9 @@ position = Vector2(400, 80)
 [node name="ChopBoard" parent="Equipments" instance=ExtResource("5_xcb3k")]
 position = Vector2(-16, -80)
 
+[node name="Bin" parent="Equipments" instance=ExtResource("7_ui7ao")]
+position = Vector2(-432, 144)
+
 [node name="Fireplace" parent="Equipments" instance=ExtResource("8_8rbuo")]
 position = Vector2(-432, 16)
 
@@ -107,33 +103,23 @@ position = Vector2(240, -216)
 [node name="CaldronLeft" parent="Equipments" instance=ExtResource("12_y8u6k")]
 position = Vector2(-210, 0)
 scale = Vector2(2, 2)
-script = ExtResource("13_20xda")
 
 [node name="CaldronRight" parent="Equipments" instance=ExtResource("12_y8u6k")]
 position = Vector2(210, 0)
 scale = Vector2(2, 2)
-script = ExtResource("14_6jdh6")
 
-[node name="Portal" parent="Equipments" instance=ExtResource("13_oyv04")]
-position = Vector2(-17, -216)
-scale = Vector2(2, 2)
-
-[node name="Bins" type="Node2D" parent="."]
-
-[node name="HeartBin" parent="Bins" instance=ExtResource("7_ui7ao")]
-position = Vector2(-432, 112)
-
-[node name="FrogBin" parent="Bins" instance=ExtResource("7_ui7ao")]
-position = Vector2(400, -144)
-ingredient = SubResource("Resource_a2xjs")
-
-[node name="ScoreText" type="Label" parent="." groups=["label"]]
+[node name="Label" type="Label" parent="."]
 offset_left = -479.0
 offset_top = -282.0
 offset_right = -342.0
 offset_bottom = -256.0
-text = "Score:"
+text = "test"
 script = ExtResource("13_dmlrm")
+
+[node name="Portal" parent="." groups=["Portal"] instance=ExtResource("13_oyv04")]
+position = Vector2(-17, -216)
+scale = Vector2(2, 2)
+interaction_distance = null
 
 [editable path="Player1"]
 [editable path="Player2"]

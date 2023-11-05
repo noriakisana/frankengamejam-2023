@@ -1,5 +1,7 @@
 extends Equipment
 
+signal potion_placed(delta_score)
+
 #var label : Label = get_tree().get_first_node_in_group("label");
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +14,7 @@ func is_compatible(useable : Useable):
 	return useable is Potion
 
 func start_processing():
-	get_tree().get_nodes_in_group("label")[0].increaseScore(1)
+	potion_placed.emit(1)
 	#Score.increaseScore(1)
 	useable_node.queue_free()
 	placed_useable = null

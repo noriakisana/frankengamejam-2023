@@ -28,7 +28,7 @@ _data = {
 "mortar_animation": SubResource("Animation_p20os")
 }
 
-[node name="Portal" type="Sprite2D"]
+[node name="Portal" type="Sprite2D" groups=["portal"]]
 texture = SubResource("AtlasTexture_7mo3f")
 script = ExtResource("2_d1ut8")
 
