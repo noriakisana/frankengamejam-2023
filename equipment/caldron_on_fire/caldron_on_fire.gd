@@ -25,6 +25,7 @@ func _ready():
 func show_recipe():
 	for item_type in recipe:
 		var ingredient = panel_template.instantiate()
+		ingredient.type = item_type
 		var texture_rect = ingredient.get_child(0)
 		texture_rect.set_texture(get_ingredient_img(item_type))
 		
@@ -79,8 +80,11 @@ func start_processing():
 			fullfilled = false
 	if fullfilled:
 		process_potion()
-func item_added_to_caldron():		
-	pass
+		
+func item_added_to_caldron(type: Type):		
+	for panel in container.get_children():
+		if type == panel.type:
+			container.remove_child(panel)
 		
 func _on_process_timer_timeout():
 		placed_useable = load("res://traenke/trank_green/green_potion.tres")
