@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cw2sukhi82fgp"]
+[gd_scene load_steps=25 format=3 uid="uid://cw2sukhi82fgp"]
 
 [ext_resource type="Texture2D" uid="uid://c3w5pqc8vjsjt" path="res://map/tileset.png" id="1_l7bjk"]
 [ext_resource type="Script" path="res://main.gd" id="1_m04ax"]
@@ -46,6 +46,18 @@ sources/0 = SubResource("TileSetAtlasSource_0v1r0")
 [sub_resource type="Resource" id="Resource_a2xjs"]
 script = ExtResource("14_y6fyp")
 type = 3
+
+[sub_resource type="Resource" id="Resource_gqxwm"]
+script = ExtResource("14_y6fyp")
+type = 0
+
+[sub_resource type="Resource" id="Resource_0pg0a"]
+script = ExtResource("14_y6fyp")
+type = 1
+
+[sub_resource type="Resource" id="Resource_2i0au"]
+script = ExtResource("14_y6fyp")
+type = 6
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_m04ax")
@@ -125,8 +137,20 @@ scale = Vector2(2, 2)
 position = Vector2(-432, 112)
 
 [node name="FrogBin" parent="Bins" instance=ExtResource("7_ui7ao")]
-position = Vector2(400, -144)
+position = Vector2(208, 112)
 ingredient = SubResource("Resource_a2xjs")
+
+[node name="FairydustBin" parent="Bins" instance=ExtResource("7_ui7ao")]
+position = Vector2(176, 208)
+ingredient = SubResource("Resource_gqxwm")
+
+[node name="UnicornBin" parent="Bins" instance=ExtResource("7_ui7ao")]
+position = Vector2(400, 16)
+ingredient = SubResource("Resource_0pg0a")
+
+[node name="SnakeBin" parent="Bins" instance=ExtResource("7_ui7ao")]
+position = Vector2(-208, -208)
+ingredient = SubResource("Resource_2i0au")
 
 [node name="ScoreText" type="Label" parent="." groups=["label"]]
 offset_left = -469.0

@@ -10,7 +10,8 @@ enum Type {
 	FRIED_FROG,
 	HEART,
 	SNAKE,
-	CHOPPED_HEART
+	CHOPPED_HEART,
+	FRIED_SNAKE
 }
 
 @export var type : Type
@@ -32,3 +33,5 @@ func get_scene():
 		return load("res://ingredients/snake/snake.tscn").instantiate()
 	elif self.type == Type.CHOPPED_HEART:
 		return load("res://ingredients/dragonheartslices/dragonheartslices.tscn").instantiate()
+	elif self.type == Type.FRIED_SNAKE:
+		return load("res://ingredients/fried_snake/fried_snake.tscn").instantiate()

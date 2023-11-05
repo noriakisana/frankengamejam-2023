@@ -13,7 +13,9 @@ func _process(delta):
 		$ProgressBar.size.x = bar_width
 
 func is_compatible(useable : Useable):
-	return useable is Ingredient and useable.type == Ingredient.Type.FROG
+	return (useable is Ingredient
+	and (useable.type == Ingredient.Type.FROG
+	or useable.type == Ingredient.Type.SNAKE))
 
 func start_processing():
 	is_processing = true
@@ -26,9 +28,11 @@ func _on_process_timer_timeout():
 	$ProgressBar.visible = false
 	if placed_useable.type == Ingredient.Type.FROG:
 		placed_useable = load("res://ingredients/fried_frog/fried_frog.tres")
-		useable_node.queue_free()
-		useable_node = placed_useable.get_scene()
-		useable_node.scale = Vector2(0.7, 0.7)
-		add_child(useable_node)
-		is_processing = false
-		$AnimationPlayer.stop()
+	elif placed_useable.type == Ingredient.Type.SNAKE:
+		placed_useable = load("res://ingredients/fried_snake/fried_snake.tres")
+	useable_node.queue_free()
+	useable_node = placed_useable.get_scene()
+	useable_node.scale = Vector2(0.7, 0.7)
+	add_child(useable_node)
+	is_processing = false
+	$AnimationPlayer.stop()
