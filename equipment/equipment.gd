@@ -24,6 +24,10 @@ var useable_node : Node2D
 
 var is_processing = false
 
+#caldron
+var recipe = []
+var recipeSize = 0
+
 func _ready():
 	"""
 	self.placed_useable = load("res://ingredients/snake.tres")
@@ -55,8 +59,8 @@ func interact(is_player_1 : bool, useable : Useable):
 	if distance_to_player <= interaction_distance:
 		if is_processing: # there is currently something processing
 			return
-		
-		if placed_useable and !((self.get_name() == "CaldronLeft" or self.get_name() == "CaldronRight") and self.recipe.size() != self.ingredients.size()): # there is a placed usable
+		if placed_useable and !((self.get_name() == "CaldronLeft" or self.get_name() == "CaldronRight") and not self.recipeSize == self.ingredients.size()): # there is a placed usable
+			self.recipeSize = self.recipe.size()
 			var success = player.receive_useable(placed_useable)
 			if success: # player can pickup useable
 				if self.get_name() == "CaldronLeft" or self.get_name() == "CaldronRight":
@@ -86,4 +90,6 @@ func start_processing():
 	pass
 	
 func item_added_to_caldron(type: Type):
+	pass
+func new_recipe():
 	pass

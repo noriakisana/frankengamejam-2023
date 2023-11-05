@@ -4,10 +4,15 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+<<<<<<< HEAD
+	randomize()# Replace with function body.
+
+=======
 	$Timer.wait_time = time_limit
 	$TimeUpText.visible = false
 	
 	$Timer.start()
+>>>>>>> b0126652ab88a8d2cfe5b11203c9558688f022a3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
