@@ -30,7 +30,6 @@ _data = {
 
 [node name="Portal" type="Sprite2D"]
 texture = SubResource("AtlasTexture_7mo3f")
-frame = 1
 script = ExtResource("2_d1ut8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

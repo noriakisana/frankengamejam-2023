@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0qqscc3yl72j"]
-
-[ext_resource type="Texture2D" uid="uid://bovouihfx8y4w" path="res://equipment/bin/bin.png" id="1_t3med"]
-[ext_resource type="Script" path="res://equipment/bin/bin.gd" id="2_gnbpu"]
-
-[node name="Bin" type="Sprite2D"]
-texture = ExtResource("1_t3med")
-script = ExtResource("2_gnbpu")
