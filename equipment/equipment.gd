@@ -59,6 +59,8 @@ func interact(is_player_1 : bool, useable : Useable):
 		if placed_useable and !((self.get_name() == "CaldronLeft" or self.get_name() == "CaldronRight") and self.recipe.size() != self.ingredients.size()): # there is a placed usable
 			var success = player.receive_useable(placed_useable)
 			if success: # player can pickup useable
+				if self.get_name() == "CaldronLeft" or self.get_name() == "CaldronRight":
+					self.ingredients.clear()
 				useable_node.queue_free()
 				placed_useable = null
 		else: # the equipment is free
@@ -72,6 +74,8 @@ func interact(is_player_1 : bool, useable : Useable):
 				add_child(useable_node)
 				if self.get_name() == "CaldronLeft" or self.get_name() == "CaldronRight":
 					self.ingredients.append(useable.type)
+					useable_node.queue_free()
+					placed_useable = null
 				start_processing()
 
 func is_compatible(useable : Useable):

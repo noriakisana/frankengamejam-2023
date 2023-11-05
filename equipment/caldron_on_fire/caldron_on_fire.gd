@@ -26,9 +26,7 @@ func process_potion():
 	$ProgressBar.visible = true
 	$ProcessTimer.wait_time = processing_time
 	$ProcessTimer.start()
-	#print("jaaa?")
 	$AnimationPlayer.play("caldron_on_fire_animation")
-	#print("nein?")
 
 func start_processing():
 	
@@ -41,12 +39,10 @@ func start_processing():
 		process_potion()
 		
 func _on_process_timer_timeout():
-	if placed_useable.type == Ingredient.Type.HEART:
 		placed_useable = load("res://traenke/trank_green/green_potion.tres")
-
-		useable_node.queue_free()
 		useable_node = placed_useable.get_scene()
 		useable_node.scale = Vector2(0.7, 0.7)
 		add_child(useable_node)
 		is_processing = false
+		$ProgressBar.visible = false
 		$AnimationPlayer.stop()
