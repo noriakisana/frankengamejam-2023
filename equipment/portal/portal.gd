@@ -6,6 +6,7 @@ signal potion_placed(delta_score)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
+	$AnimationPlayer.play("portal_animation")
 	$ProgressBar.visible = false
 
 
@@ -17,11 +18,11 @@ func start_processing():
 	potion_placed.emit(1)
 	#Score.increaseScore(1)
 	useable_node.startPortalAnimation()
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(2.1).timeout
 	useable_node.queue_free()
 	placed_useable = null
 	#is_processing = true
-	#$ProgressBar.visible = true
+		#$ProgressBar.visible = true
 	#$ProcessTimer.wait_time = processing_time
 	#$ProcessTimer.start()
 	#$AnimationPlayer.play("mortar_animation")
