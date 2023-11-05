@@ -86,7 +86,7 @@ func interact(is_player_1 : bool, useable : Useable):
 				incompatible_animation()
 
 func incompatible_animation():
-	pass
+	$AnimationPlayer.play("incompatible_animation")
 
 func is_compatible(useable : Useable):
 	return false
