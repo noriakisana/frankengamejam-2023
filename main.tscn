@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cw2sukhi82fgp"]
+[gd_scene load_steps=22 format=3 uid="uid://cw2sukhi82fgp"]
 
 [ext_resource type="Texture2D" uid="uid://c3w5pqc8vjsjt" path="res://map/tileset.png" id="1_l7bjk"]
 [ext_resource type="Script" path="res://main.gd" id="1_m04ax"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cs5xf0xnx3rqd" path="res://equipment/portal/portal.tscn" id="13_oyv04"]
 [ext_resource type="Script" path="res://equipment/caldron_on_fire/caldron_on_fire_right.gd" id="14_6jdh6"]
 [ext_resource type="Script" path="res://ingredients/ingredient.gd" id="14_y6fyp"]
+[ext_resource type="FontFile" uid="uid://dak3jql4a10vs" path="res://fonts/Antique Witch.otf" id="17_2xx80"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0v1r0"]
 texture = ExtResource("1_l7bjk")
@@ -128,11 +129,14 @@ position = Vector2(400, -144)
 ingredient = SubResource("Resource_a2xjs")
 
 [node name="ScoreText" type="Label" parent="." groups=["label"]]
-offset_left = -479.0
-offset_top = -282.0
-offset_right = -342.0
-offset_bottom = -256.0
+offset_left = -469.0
+offset_top = -299.0
+offset_right = -285.0
+offset_bottom = -249.0
+theme_override_fonts/font = ExtResource("17_2xx80")
+theme_override_font_sizes/font_size = 35
 text = "Score:"
+vertical_alignment = 1
 script = ExtResource("13_dmlrm")
 
 [editable path="Player1"]

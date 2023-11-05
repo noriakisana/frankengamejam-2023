@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7mlhj3e5v2wb"]
+[gd_scene load_steps=6 format=3 uid="uid://c7mlhj3e5v2wb"]
 
 [ext_resource type="Shader" path="res://mainmenu/background-image.gdshader" id="1_qhlt8"]
 [ext_resource type="Texture2D" uid="uid://cn2c8aak7ja04" path="res://mainmenu/menu_background.png" id="1_ybnhb"]
 [ext_resource type="Script" path="res://mainmenu/buttons.gd" id="3_v4kh2"]
+[ext_resource type="FontFile" uid="uid://dak3jql4a10vs" path="res://fonts/Antique Witch.otf" id="4_g6o3y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iy0qw"]
 shader = ExtResource("1_qhlt8")
@@ -40,11 +41,15 @@ alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
 layout_direction = 1
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 1
 script = ExtResource("3_v4kh2")
 
 [node name="StartButton" type="Button" parent="Control/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_g6o3y")
+theme_override_font_sizes/font_size = 20
 text = "Start"
 
 [connection signal="pressed" from="Control/HBoxContainer/VBoxContainer/StartButton" to="Control/HBoxContainer/VBoxContainer" method="_on_start_button_pressed"]
