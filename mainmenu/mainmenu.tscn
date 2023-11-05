@@ -3,7 +3,9 @@
 [ext_resource type="Shader" path="res://mainmenu/background-image.gdshader" id="1_qhlt8"]
 [ext_resource type="Texture2D" uid="uid://cn2c8aak7ja04" path="res://mainmenu/menu_background.png" id="1_ybnhb"]
 [ext_resource type="Script" path="res://mainmenu/buttons.gd" id="3_v4kh2"]
-[ext_resource type="FontFile" uid="uid://busp5vb6hdyvq" path="res://fonts/Antique Witch.otf" id="4_g6o3y"]
+
+[ext_resource type="FontFile" uid="uid://c0f112os8j4k8" path="res://fonts/Antique Witch.otf" id="4_g6o3y"]
+
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iy0qw"]
 shader = ExtResource("1_qhlt8")
