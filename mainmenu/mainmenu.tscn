@@ -10,6 +10,7 @@ shader = ExtResource("1_qhlt8")
 shader_parameter/difference = 0.0
 
 [node name="mainmenu" type="Node2D"]
+process_mode = 3
 scale = Vector2(50, 28)
 
 [node name="Control" type="Control" parent="."]

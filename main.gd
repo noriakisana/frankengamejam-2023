@@ -1,6 +1,6 @@
 extends Node
 
-@export var time_limit : int = 20
+@export var time_limit : int = 60
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,12 +18,6 @@ func _process(delta):
 	$TimeText.text = formatted_time
 	if minutes == 0 and seconds <= 10:
 		$TimeText.modulate = Color(1, 0, 0)
-
-func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.is_action_pressed("exit_game"):
-			$Timer.stop()
-			get_tree().change_scene_to_file("res://mainmenu/mainmenu.tscn")
 
 func _on_timer_timeout():
 	$TimeUpText.visible = true
