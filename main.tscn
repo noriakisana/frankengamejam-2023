@@ -111,7 +111,6 @@ scale = Vector2(2, 2)
 [node name="Portal" parent="Equipments" instance=ExtResource("13_oyv04")]
 position = Vector2(-17, -216)
 scale = Vector2(2, 2)
-interaction_distance = 64.0
 
 [node name="Label" type="Label" parent="." groups=["label"]]
 offset_left = -479.0
