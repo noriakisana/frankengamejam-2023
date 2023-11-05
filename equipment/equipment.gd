@@ -76,10 +76,14 @@ func interact(is_player_1 : bool, useable : Useable):
 					self.ingredients.append(useable.type)
 					useable_node.queue_free()
 					placed_useable = null
+					item_added_to_caldron()
 				start_processing()
 
 func is_compatible(useable : Useable):
 	return false
 
 func start_processing():
+	pass
+	
+func item_added_to_caldron():
 	pass

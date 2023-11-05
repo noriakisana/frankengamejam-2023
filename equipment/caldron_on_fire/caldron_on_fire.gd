@@ -79,6 +79,8 @@ func start_processing():
 			fullfilled = false
 	if fullfilled:
 		process_potion()
+func item_added_to_caldron():		
+	pass
 		
 func _on_process_timer_timeout():
 		placed_useable = load("res://traenke/trank_green/green_potion.tres")
