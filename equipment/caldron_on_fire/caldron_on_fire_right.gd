@@ -1,11 +1,8 @@
-extends Node
+extends caldron_on_fire
 
+class_name caldron_on_fire_right
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	recipe = [Ingredient.Type.GRINDED_UNICORN]
+	super()
+	

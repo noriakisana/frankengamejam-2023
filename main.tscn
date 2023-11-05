@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cw2sukhi82fgp"]
+[gd_scene load_steps=19 format=3 uid="uid://cw2sukhi82fgp"]
 
 [ext_resource type="Texture2D" uid="uid://c3w5pqc8vjsjt" path="res://map/tileset.png" id="1_l7bjk"]
 [ext_resource type="Script" path="res://main.gd" id="1_m04ax"]
@@ -12,8 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://dbg04egj6hkiu" path="res://equipment/fireplace/fireplace.tscn" id="8_8rbuo"]
 [ext_resource type="PackedScene" uid="uid://djphhge7lb61q" path="res://equipment/mortar/mortar.tscn" id="11_s1vc2"]
 [ext_resource type="PackedScene" uid="uid://dwbtiapktvd17" path="res://equipment/caldron_on_fire/caldron_on_fire.tscn" id="12_y8u6k"]
+[ext_resource type="Script" path="res://equipment/caldron_on_fire/caldron_on_fire_left.gd" id="13_20xda"]
 [ext_resource type="Script" path="res://score.gd" id="13_dmlrm"]
 [ext_resource type="PackedScene" uid="uid://cs5xf0xnx3rqd" path="res://equipment/portal/portal.tscn" id="13_oyv04"]
+[ext_resource type="Script" path="res://equipment/caldron_on_fire/caldron_on_fire_right.gd" id="14_6jdh6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0v1r0"]
 texture = ExtResource("1_l7bjk")
@@ -103,10 +105,12 @@ position = Vector2(240, -216)
 [node name="CaldronLeft" parent="Equipments" instance=ExtResource("12_y8u6k")]
 position = Vector2(-210, 0)
 scale = Vector2(2, 2)
+script = ExtResource("13_20xda")
 
 [node name="CaldronRight" parent="Equipments" instance=ExtResource("12_y8u6k")]
 position = Vector2(210, 0)
 scale = Vector2(2, 2)
+script = ExtResource("14_6jdh6")
 
 [node name="Portal" parent="Equipments" instance=ExtResource("13_oyv04")]
 position = Vector2(-17, -216)

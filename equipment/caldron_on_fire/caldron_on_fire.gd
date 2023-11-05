@@ -4,13 +4,12 @@ class_name caldron_on_fire
 
 @export var processing_time = 5
 var ingredients = []
-var recipe = [Ingredient.Type.HEART, Ingredient.Type.FROG]
-
-var recipe2 = [Ingredient.Type.FRIED_FROG, Ingredient.Type.GRINDED_UNICORN]
+var recipe = [Ingredient.Type.FROG,Ingredient.Type.HEART]
 
 @onready var container = $Control/HBoxContainer
 
-@onready var ingredient_template = preload("res://equipment/caldron_on_fire/recipe_panel/RecipePanel.tscn")
+
+@onready var panel_template = preload("res://equipment/caldron_on_fire/recipe_panel/RecipePanel.tscn")
 
 func _ready():
 	super()
@@ -18,8 +17,33 @@ func _ready():
 	
 	#var texture_rect = TextureRect.new()
 	#texture_rect.texture = load("res://ingredients/unicorn/unicorn1.png")
-	var ingredient = ingredient_template.instantiate()
-	container.add_child(ingredient)
+	show_recipe()
+	
+func show_recipe():
+	for item_type in recipe:
+		var ingredient = panel_template.instantiate()
+		var texture_rect = ingredient.get_child(0)
+		texture_rect.set_texture(get_ingredient_img(item_type))
+		container.add_child(ingredient)
+		
+func get_ingredient_img(ingredient_type: Type):
+	if ingredient_type == Ingredient.Type.FAIRYDUST:
+		return load("res://ingredients/fairydust/fairydust.png")
+	elif ingredient_type == Ingredient.Type.UNICORN:
+		return load("res://ingredients/unicorn/unicorn.tscn")
+	elif ingredient_type == Ingredient.Type.GRINDED_UNICORN:
+		return load("res://ingredients/grinded_unicorn/grinded_unicorn.png")
+	elif ingredient_type == Ingredient.Type.FROG:
+		return load("res://ingredients/frog/frog.png")
+	elif ingredient_type == Ingredient.Type.FRIED_FROG:
+		return load("res://ingredients/fried_frog/fried_frog.png")
+	elif ingredient_type == Ingredient.Type.HEART:
+		return load("res://ingredients/dragonheart/dragonheart.png")
+	elif ingredient_type == Ingredient.Type.SNAKE:
+		return load("res://ingredients/snake/snake.png")
+	elif ingredient_type == Ingredient.Type.CHOPPED_HEART:
+		return load("res://ingredients/dragonheartslices/dragonheartslices.png")
+	
 
 func _process(delta):
 	super(delta)
