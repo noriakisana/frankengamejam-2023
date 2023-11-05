@@ -50,6 +50,8 @@ func get_ingredient_img(ingredient_type: Type):
 		return load("res://ingredients/snake/snake.png")
 	elif ingredient_type == Ingredient.Type.CHOPPED_HEART:
 		return load("res://ingredients/dragonheartslices/dragonheartslices.png")
+	elif ingredient_type == Ingredient.Type.FRIED_SNAKE:
+		return load("res://ingredients/fried_snake/fried_snake.png")
 	
 
 func _process(delta):
@@ -70,7 +72,6 @@ func new_recipe():
 	for i in range(num):
 		item = randi() % Ingredient.ingredients.size()
 		recipe.append(Ingredient.ingredients[item])
-		print(item)
 	show_recipe()
 
 	
