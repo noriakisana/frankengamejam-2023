@@ -82,6 +82,11 @@ func interact(is_player_1 : bool, useable : Useable):
 					placed_useable = null
 					item_added_to_caldron(useable.type)
 				start_processing()
+			else:
+				incompatible_animation()
+
+func incompatible_animation():
+	pass
 
 func is_compatible(useable : Useable):
 	return false
