@@ -60,4 +60,15 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 color = Color(0, 0.780392, 0.780392, 1)
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

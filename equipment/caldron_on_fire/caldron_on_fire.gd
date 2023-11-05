@@ -5,9 +5,19 @@ class_name caldron_on_fire
 @export var processing_time = 5
 var ingredients = []
 var recipe = [Ingredient.Type.HEART, Ingredient.Type.FROG]
+
+@onready var container = $Control/HBoxContainer
+
+@onready var ingredient_template = preload("res://equipment/caldron_on_fire/recipe_panel/RecipePanel.tscn")
+
 func _ready():
 	super()
 	$ProgressBar.visible = false
+	
+	#var texture_rect = TextureRect.new()
+	#texture_rect.texture = load("res://ingredients/unicorn/unicorn1.png")
+	var ingredient = ingredient_template.instantiate()
+	container.add_child(ingredient)
 
 func _process(delta):
 	super(delta)
