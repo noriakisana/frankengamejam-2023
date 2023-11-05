@@ -13,13 +13,12 @@ var ingredients = []
 
 func _ready():
 	super()
+	new_recipe()
 	
 	$ProgressBar.visible = false
 	
 	#var texture_rect = TextureRect.new()
 	#texture_rect.texture = load("res://ingredients/unicorn/unicorn1.png")
-
-	show_recipe()
 	
 func show_recipe():
 	for item_type in recipe:
