@@ -5,6 +5,7 @@ class_name caldron_on_fire
 @export var processing_time = 5
 var ingredients = []
 var recipe = [Ingredient.Type.HEART, Ingredient.Type.FROG]
+#var recipe2 = [Ingredient.Type.FRIED_FROG, Ingredient.Type.GRINDED_UNICORN]
 func _ready():
 	super()
 	$ProgressBar.visible = false
