@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0qqscc3yl72j"]
+[gd_scene load_steps=6 format=3 uid="uid://b0qqscc3yl72j"]
 
 [ext_resource type="Texture2D" uid="uid://cg5ayjlc6vlhs" path="res://bins/bin.png" id="1_0vnmv"]
 [ext_resource type="Script" path="res://bins/bin.gd" id="2_u6ov3"]
@@ -8,7 +8,16 @@
 script = ExtResource("3_heh2w")
 type = 5
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxudx"]
+size = Vector2(32, 16)
+
 [node name="Bin" type="Sprite2D"]
 texture = ExtResource("1_0vnmv")
 script = ExtResource("2_u6ov3")
 ingredient = SubResource("Resource_a5y2i")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_xxudx")

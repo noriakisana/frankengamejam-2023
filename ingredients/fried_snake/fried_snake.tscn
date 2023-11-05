@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhked3qhwgvoh"]
+
+[ext_resource type="Texture2D" uid="uid://730ydfvph2e6" path="res://ingredients/fried_snake/fried_snake.png" id="1_b1mwi"]
+
+[node name="FriedSnake" type="Sprite2D"]
+texture = ExtResource("1_b1mwi")

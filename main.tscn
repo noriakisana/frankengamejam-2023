@@ -137,7 +137,7 @@ scale = Vector2(2, 2)
 position = Vector2(-432, 112)
 
 [node name="FrogBin" parent="Bins" instance=ExtResource("7_ui7ao")]
-position = Vector2(400, -144)
+position = Vector2(208, 112)
 ingredient = SubResource("Resource_a2xjs")
 
 [node name="FairydustBin" parent="Bins" instance=ExtResource("7_ui7ao")]
