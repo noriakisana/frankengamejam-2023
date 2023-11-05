@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bthh8bokg06qu"]
+
+[ext_resource type="Texture2D" uid="uid://s6nj10y3ia4o" path="res://equipment/chop_board/chop_board.png" id="1_i6f0h"]
+[ext_resource type="Script" path="res://equipment/chop_board/chop_board.gd" id="2_byqud"]
+
+[node name="ChopBoard" type="Sprite2D"]
+texture = ExtResource("1_i6f0h")
+script = ExtResource("2_byqud")
+
+[node name="ProcessTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ProgressBar" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = -14.0
+color = Color(0, 0.803922, 0.803922, 1)
+
+[connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

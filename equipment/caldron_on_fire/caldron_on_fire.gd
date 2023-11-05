@@ -4,7 +4,7 @@ class_name caldron_on_fire
 
 @export var processing_time = 5
 var ingredients = []
-var recipe = [Ingredient.Type.FROG,Ingredient.Type.HEART] 
+
 
 @onready var panel_template = preload("res://equipment/caldron_on_fire/recipe_panel/RecipePanel.tscn")
 
@@ -13,7 +13,6 @@ var recipe = [Ingredient.Type.FROG,Ingredient.Type.HEART]
 
 func _ready():
 	super()
-	
 	
 	$ProgressBar.visible = false
 	
@@ -31,7 +30,8 @@ func show_recipe():
 		
 		container.add_child(ingredient)
 		
-		
+
+	
 		
 func get_ingredient_img(ingredient_type: Type):
 	if ingredient_type == Ingredient.Type.FAIRYDUST:
@@ -62,6 +62,15 @@ func _process(delta):
 func is_compatible(useable : Useable):
 	return useable is Ingredient
 
+func new_recipe():
+	recipeSize = recipe.size()
+	recipe.clear()
+	var num = randi_range(1,3)
+	var item
+	for i in range(num):
+		item = randi() % Ingredient.ingredients.size()
+		recipe.append(Ingredient.ingredients[item])
+	show_recipe()
 
 	
 func process_potion():
@@ -75,13 +84,14 @@ func start_processing():
 	
 	var fullfilled = true
 	for ingredient in recipe:
-		
 		if !ingredients.has(ingredient):
 			fullfilled = false
-	if fullfilled:
+	if fullfilled:		
+		new_recipe()
 		process_potion()
 		
 func item_added_to_caldron(type: Type):		
+	
 	for panel in container.get_children():
 		if type == panel.type:
 			container.remove_child(panel)
