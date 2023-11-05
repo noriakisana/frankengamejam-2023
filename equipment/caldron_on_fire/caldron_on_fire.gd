@@ -13,13 +13,12 @@ var ingredients = []
 
 func _ready():
 	super()
+	new_recipe()
 	
 	$ProgressBar.visible = false
 	
 	#var texture_rect = TextureRect.new()
 	#texture_rect.texture = load("res://ingredients/unicorn/unicorn1.png")
-
-	show_recipe()
 	
 func show_recipe():
 	for item_type in recipe:
@@ -50,6 +49,8 @@ func get_ingredient_img(ingredient_type: Type):
 		return load("res://ingredients/snake/snake.png")
 	elif ingredient_type == Ingredient.Type.CHOPPED_HEART:
 		return load("res://ingredients/dragonheartslices/dragonheartslices.png")
+	elif ingredient_type == Ingredient.Type.FRIED_SNAKE:
+		return load("res://ingredients/fried_snake/fried_snake.png")
 	
 
 func _process(delta):
@@ -70,7 +71,6 @@ func new_recipe():
 	for i in range(num):
 		item = randi() % Ingredient.ingredients.size()
 		recipe.append(Ingredient.ingredients[item])
-		print(item)
 	show_recipe()
 
 	
