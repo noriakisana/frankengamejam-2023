@@ -136,7 +136,7 @@ position = Vector2(-400, 112)
 
 [node name="FrogBin" parent="YSortStuff/Bins" instance=ExtResource("7_ui7ao")]
 y_sort_enabled = true
-position = Vector2(16, 176)
+position = Vector2(144, 176)
 ingredient = SubResource("Resource_a2xjs")
 
 [node name="FairydustBin" parent="YSortStuff/Bins" instance=ExtResource("7_ui7ao")]
@@ -158,13 +158,11 @@ ingredient = SubResource("Resource_2i0au")
 
 [node name="CauldronLeft" parent="YSortStuff/Cauldrons" instance=ExtResource("12_y8u6k")]
 position = Vector2(-210, 0)
-interaction_distance = 64.0
-processing_time = 5
+scale = Vector2(2, 2)
 
 [node name="CauldronRight" parent="YSortStuff/Cauldrons" instance=ExtResource("12_y8u6k")]
 position = Vector2(210, 0)
-interaction_distance = 64.0
-processing_time = 5
+scale = Vector2(2, 2)
 
 [node name="ScoreText" type="Label" parent="." groups=["label"]]
 offset_left = -469.0
