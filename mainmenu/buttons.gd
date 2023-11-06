@@ -6,10 +6,10 @@ var first_focus = true
 func _ready():
 	$StartButton.grab_focus()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("exit_game"):
-		get_tree().quit()
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.is_action_pressed("exit_game"):
+			get_tree().quit()
 
 func _on_start_button_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")
