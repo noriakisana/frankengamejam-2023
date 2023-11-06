@@ -7,7 +7,7 @@ func _ready():
 	$StartButton.grab_focus()
 
 func _unhandled_input(event):
-	if event is InputEventKey:
+	if event is InputEventKey or event is InputEventJoypadButton:
 		if event.is_action_pressed("exit_game"):
 			get_tree().quit()
 
