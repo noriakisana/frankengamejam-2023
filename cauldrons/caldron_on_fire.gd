@@ -4,6 +4,7 @@ class_name Cauldron
 
 @export var interaction_distance : float = 64
 @export var processing_time = 5
+@export var maximum_recipe_size = 3
 
 @onready var player_1 : Player = get_tree().get_first_node_in_group("player")
 @onready var player_2 : Player = get_tree().get_nodes_in_group("player")[1]
@@ -85,12 +86,12 @@ func _on_process_timer_timeout():
 	is_processing = false
 
 func generate_recipe():
-	# generate the recipe
-	recipe = [
-		load("res://ingredients/dragonheart/dragonheart.tres"),
-		load("res://ingredients/snake/snake.tres"),
-		load("res://ingredients/dragonheart/dragonheart.tres")
-	]
+	var recipe_size = randi() % maximum_recipe_size + 1
+	recipe = []
+	for i in range(recipe_size):
+		var ing_type = randi() % Ingredient.Type.size()
+		var ing_res = Ingredient.new(ing_type)
+		recipe.append(ing_res)
 
 func fill_recipe_panel():
 	for r in recipe:

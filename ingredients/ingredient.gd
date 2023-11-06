@@ -16,6 +16,9 @@ enum Type {
 
 @export var type : Type
 
+func _init(type=Type.FAIRYDUST):
+	self.type = type
+
 func get_scene():
 	if self.type == Type.FAIRYDUST:
 		return load("res://ingredients/fairydust/fairydust.tscn").instantiate()
@@ -55,3 +58,4 @@ func get_image():
 		return load("res://ingredients/dragonheartslices/dragonheartslices.png")
 	elif self.type == Type.FRIED_SNAKE:
 		return load("res://ingredients/fried_snake/fried_snake.png")
+

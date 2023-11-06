@@ -5,6 +5,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	
 	$Timer.wait_time = time_limit
 	$TimeUpText.visible = false
 	
