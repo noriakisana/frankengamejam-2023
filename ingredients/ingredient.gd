@@ -12,9 +12,12 @@ enum Type {
 	SNAKE,
 	CHOPPED_HEART,
 	FRIED_SNAKE
-}# Always add items to Type and ingredients, and add png in caldron_on_fire if-statement
-const ingredients = [Type.FAIRYDUST, Type.UNICORN,Type.GRINDED_UNICORN, Type.FROG, Type.FRIED_FROG, Type.HEART, Type.SNAKE, Type.CHOPPED_HEART, Type.FRIED_SNAKE]
+}
+
 @export var type : Type
+
+func _init(type=Type.FAIRYDUST):
+	self.type = type
 
 func get_scene():
 	if self.type == Type.FAIRYDUST:
@@ -35,3 +38,24 @@ func get_scene():
 		return load("res://ingredients/dragonheartslices/dragonheartslices.tscn").instantiate()
 	elif self.type == Type.FRIED_SNAKE:
 		return load("res://ingredients/fried_snake/fried_snake.tscn").instantiate()
+
+func get_image():
+	if self.type == Type.FAIRYDUST:
+		return load("res://ingredients/fairydust/fairydust.png")
+	elif self.type == Type.UNICORN:
+		return load("res://ingredients/unicorn/unicorn1.png")
+	elif self.type == Type.GRINDED_UNICORN:
+		return load("res://ingredients/grinded_unicorn/grinded_unicorn.png")
+	elif self.type == Type.FROG:
+		return load("res://ingredients/frog/frog.png")
+	elif self.type == Type.FRIED_FROG:
+		return load("res://ingredients/fried_frog/fried_frog.png")
+	elif self.type == Type.HEART:
+		return load("res://ingredients/dragonheart/dragonheart.png")
+	elif self.type == Type.SNAKE:
+		return load("res://ingredients/snake/snake.png")
+	elif self.type == Type.CHOPPED_HEART:
+		return load("res://ingredients/dragonheartslices/dragonheartslices.png")
+	elif self.type == Type.FRIED_SNAKE:
+		return load("res://ingredients/fried_snake/fried_snake.png")
+

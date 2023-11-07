@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwbtiapktvd17"]
+[gd_scene load_steps=7 format=3 uid="uid://dwbtiapktvd17"]
 
-[ext_resource type="Texture2D" uid="uid://d15ifq6t83o20" path="res://equipment/caldron_on_fire/caldron_on_fire.png" id="1_vt0dd"]
-[ext_resource type="Script" path="res://equipment/caldron_on_fire/caldron_on_fire.gd" id="1_xw0hb"]
+[ext_resource type="Texture2D" uid="uid://k8k5pna5sd8o" path="res://cauldrons/caldron_on_fire.png" id="1_vt0dd"]
+[ext_resource type="Script" path="res://cauldrons/caldron_on_fire.gd" id="1_xw0hb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40mlm"]
 size = Vector2(29, 12)
@@ -23,9 +23,27 @@ tracks/0/keys = {
 "values": [0, 1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_r5spk"]
+resource_name = "incompatible_animation"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.174533, 0.349066, 0.174533, 0.0, -0.174533, -0.349066, -0.174533, 0.0, 0.174533, 0.349066, 0.174533, 0.0, -0.174533, -0.349066, -0.174533, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jp6iy"]
 _data = {
-"caldron_on_fire_animation": SubResource("Animation_s8qjd")
+"caldron_on_fire_animation": SubResource("Animation_s8qjd"),
+"incompatible_animation": SubResource("Animation_r5spk")
 }
 
 [node name="caldron_on_fire" type="Sprite2D"]
@@ -63,16 +81,26 @@ color = Color(0, 0.780392, 0.780392, 1)
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+offset_left = -30.0
+offset_top = 12.0
+offset_right = 30.0
+offset_bottom = 22.0
+size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
-custom_minimum_size = Vector2(32, 0)
-layout_mode = 0
-offset_left = -12.0
-offset_top = 12.0
-offset_right = 52.0
-offset_bottom = 26.0
+custom_minimum_size = Vector2(60, 10)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -5.0
+offset_right = 30.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

@@ -11,6 +11,7 @@ func _ready():
 
 func reset_score():
 	score = 0
+	self.text = "Score: " + str(score)
 
 func increase_score(delta_score):
 	score = score + delta_score
